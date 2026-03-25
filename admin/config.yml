@@ -1,6 +1,7 @@
 backend:
   name: git-gateway
   branch: main
+  site_domain: adorable-crepe-f8a710.netlify.app
 
 # 日本語UI
 locale: ja
