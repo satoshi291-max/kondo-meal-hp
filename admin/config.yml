@@ -1,0 +1,43 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# 日本語UI
+locale: ja
+
+# 画像のアップロード先
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "images"
+    label: "画像管理"
+    label_singular: "画像"
+    folder: "images"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "ファイル名メモ", name: "title", widget: "string" }
+
+  - name: "pages"
+    label: "ページ編集"
+    files:
+      - label: "トップページ テキスト"
+        name: "index"
+        file: "_data/index.yml"
+        fields:
+          - { label: "ヒーロー キャッチコピー（1行目）", name: "hero_line1", widget: "string" }
+          - { label: "ヒーロー キャッチコピー（2行目）", name: "hero_line2", widget: "string" }
+          - { label: "ヒーロー サブテキスト", name: "hero_sub", widget: "string" }
+          - { label: "ホテルセクション 見出し", name: "hotel_heading", widget: "string" }
+          - { label: "ホテルセクション 本文", name: "hotel_body", widget: "text" }
+
+      - label: "会社情報"
+        name: "company"
+        file: "_data/company.yml"
+        fields:
+          - { label: "会社名", name: "name", widget: "string" }
+          - { label: "代表者名", name: "ceo", widget: "string" }
+          - { label: "従業員数", name: "staff", widget: "string" }
+          - { label: "電話番号", name: "tel", widget: "string" }
+          - { label: "住所", name: "address", widget: "string" }
