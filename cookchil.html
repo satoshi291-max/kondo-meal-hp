@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>クックチルシステム | 近藤ミールサービス</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .flow-section { background: var(--brown-dark); }
+    .flow-section h2 { color: var(--gold); }
+    .flow-section .lead { color: var(--gold-light); }
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
+      margin-top: 48px;
+    }
+    .flow-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(201,168,76,0.2);
+      padding: 28px 16px;
+      text-align: center;
+      position: relative;
+    }
+    .flow-card::after {
+      content: "→";
+      position: absolute;
+      right: -14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--gold);
+      font-size: 20px;
+      z-index: 1;
+    }
+    .flow-card:last-child::after { display: none; }
+    .flow-card .icon { font-size: 36px; margin-bottom: 12px; }
+    .flow-card h4 { color: var(--gold); font-size: 15px; margin-bottom: 8px; }
+    .flow-card p { color: var(--gold-light); font-size: 12px; line-height: 1.6; }
+
+    .flow-photos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 40px;
+    }
+
+    .compare-section { background: var(--beige); }
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 48px;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+    .compare-table th {
+      padding: 16px 20px;
+      font-size: 15px;
+      text-align: center;
+    }
+    .compare-table th:first-child { background: transparent; }
+    .compare-table th:nth-child(2) { background: var(--gold); color: var(--brown-dark); }
+    .compare-table th:nth-child(3) { background: #ccc; color: #444; }
+    .compare-table td {
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--gold-light);
+      font-size: 14px;
+    }
+    .compare-table td:first-child { font-weight: bold; color: var(--brown); }
+    .compare-table td:nth-child(2) { background: #fff8ee; text-align: center; color: var(--brown); }
+    .compare-table td:nth-child(3) { background: #f5f5f5; text-align: center; color: #666; }
+    .good { color: #2a8a2a; font-weight: bold; }
+    .bad { color: #cc4444; }
+
+    .point-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 48px;
+    }
+    .point-card {
+      border-top: 3px solid var(--gold);
+      padding: 32px 24px;
+      background: var(--beige);
+    }
+    .point-card .num { font-size: 40px; color: var(--gold); font-family: Georgia, serif; font-weight: bold; margin-bottom: 8px; }
+    .point-card h3 { font-size: 18px; color: var(--brown-dark); margin-bottom: 12px; }
+    .point-card p { font-size: 14px; color: #666; line-height: 1.8; }
+
+    @media (max-width: 768px) {
+      .flow-grid { grid-template-columns: 1fr; }
+      .flow-card::after { content: "↓"; right: 50%; top: unset; bottom: -14px; transform: translateX(50%); }
+      .flow-photos { grid-template-columns: 1fr 1fr; }
+      .compare-table { font-size: 13px; }
+      .compare-table td, .compare-table th { padding: 10px 12px; }
+      .point-cards { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">KMS <span>近藤ミールサービス</span></a>
+  <nav>
+    <a href="hotel.html">ホテル向けサービス</a>
+    <a href="cookchil.html" class="active">クックチルシステム</a>
+    <a href="custom.html">個別対応</a>
+    <a href="company.html">会社情報</a>
+    <a href="contact.html">お問い合わせ</a>
+  </nav>
+  <div class="hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="hotel.html">ホテル向けサービス</a>
+  <a href="cookchil.html">クックチルシステム</a>
+  <a href="custom.html">個別対応</a>
+  <a href="company.html">会社情報</a>
+  <a href="contact.html">お問い合わせ</a>
+</div>
+
+<div class="page-hero">
+  <p class="section-label">Cook-Chill System</p>
+  <h1>クックチルシステム</h1>
+  <p>加熱調理後、90分以内に3℃以下へ急速冷却。<br>品質・衛生・効率を同時に高めるKMSの核心技術です。</p>
+</div>
+
+<!-- フロー -->
+<section class="flow-section">
+  <div class="container">
+    <p class="section-label">Process</p>
+    <h2>クックチルの工程</h2>
+    <p class="lead">セントラルキッチンで一括調理し、チルド状態で各施設へ配送。<br>現場では温めるだけで安定した品質の食事を提供できます。</p>
+    <div class="flow-grid">
+      <div class="flow-card">
+        <div class="icon">🍳</div>
+        <h4>加熱調理</h4>
+        <p>セントラルキッチンで衛生管理のもと一括調理</p>
+      </div>
+      <div class="flow-card">
+        <div class="icon">❄️</div>
+        <h4>急速冷却</h4>
+        <p>専用機で90分以内に中心温度3℃以下へ</p>
+      </div>
+      <div class="flow-card">
+        <div class="icon">📦</div>
+        <h4>真空パック</h4>
+        <p>個別密封で酸化・菌の増殖を抑制</p>
+      </div>
+      <div class="flow-card">
+        <div class="icon">🚚</div>
+        <h4>チルド配送</h4>
+        <p>温度管理された車両で各施設・ホテルへ</p>
+      </div>
+      <div class="flow-card">
+        <div class="icon">🍽️</div>
+        <h4>再加熱・提供</h4>
+        <p>現場スタッフが温めるだけで即提供</p>
+      </div>
+    </div>
+    <div class="flow-photos">
+      <div class="img-placeholder" style="background: rgba(255,255,255,0.08); border-color: rgba(201,168,76,0.4); color: var(--gold-light); min-height: 160px;">セントラルキッチン<br>調理室の写真</div>
+      <div class="img-placeholder" style="background: rgba(255,255,255,0.08); border-color: rgba(201,168,76,0.4); color: var(--gold-light); min-height: 160px;">急速冷却機・<br>真空パック機の写真</div>
+      <div class="img-placeholder" style="background: rgba(255,255,255,0.08); border-color: rgba(201,168,76,0.4); color: var(--gold-light); min-height: 160px;">チルド配送車両<br>の写真</div>
+    </div>
+  </div>
+</section>
+
+<!-- 従来調理との比較 -->
+<section class="compare-section">
+  <div class="container">
+    <p class="section-label">Comparison</p>
+    <h2>従来調理との比較</h2>
+    <p class="lead">現場調理（On-site）に比べ、クックチルは品質・衛生・コストのすべてで優位性があります。</p>
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>✅ クックチル（KMS）</th>
+          <th>従来の現場調理</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>品質の安定性</td><td class="good">◎ 毎回同じ品質</td><td class="bad">△ 担当者によりばらつき</td></tr>
+        <tr><td>必要な調理スタッフ</td><td class="good">◎ 最小限でOK</td><td class="bad">✕ 多数必要</td></tr>
+        <tr><td>食材ロス</td><td class="good">◎ 計画調理で廃棄ゼロに近づく</td><td class="bad">△ 過剰仕込みが発生しやすい</td></tr>
+        <tr><td>衛生管理</td><td class="good">◎ HACCP基準の一元管理</td><td class="bad">△ 現場依存</td></tr>
+        <tr><td>深夜・早朝対応</td><td class="good">◎ 再加熱のみで対応可</td><td class="bad">✕ 深夜スタッフが必要</td></tr>
+        <tr><td>アレルギー対応</td><td class="good">◎ 製造段階で分別管理</td><td class="bad">△ 現場での混入リスク</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 3つのポイント -->
+<section style="background: var(--white);">
+  <div class="container">
+    <p class="section-label">Key Points</p>
+    <h2>クックチルが選ばれる3つの理由</h2>
+    <div class="point-cards">
+      <div class="point-card">
+        <div class="num">01</div>
+        <h3>食中毒リスクを大幅低減</h3>
+        <p>調理後90分以内に3℃以下へ冷却することで、細菌の増殖ゾーン（10〜60℃）を素早く通過。食品安全の国際基準HACCPに準拠した管理を徹底しています。</p>
+      </div>
+      <div class="point-card">
+        <div class="num">02</div>
+        <h3>最大5日間の品質保持</h3>
+        <p>急速冷却＋真空パックにより、冷蔵状態で最大5日間、品質と風味を保持。計画的な生産が可能になり、食材廃棄ロスを大幅に削減できます。</p>
+      </div>
+      <div class="point-card">
+        <div class="num">03</div>
+        <h3>現場のオペレーションを簡素化</h3>
+        <p>ホテル・施設のスタッフは「温めて盛り付ける」だけ。調理の専門知識がなくても安定した品質の食事を提供できるため、人材確保の悩みを解消します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>クックチル導入のご相談</h2>
+  <p>現在の調理体制・課題をお聞かせください。<br>最適なプランを無料でご提案します。</p>
+  <div class="cta-buttons">
+    <a href="contact.html" class="btn-primary">お問い合わせはこちら</a>
+    <a href="hotel.html" class="btn-secondary">ホテル向けサービスを見る</a>
+  </div>
+  <div class="tel">0895-49-5085<span>受付時間：平日 9:00〜17:00</span></div>
+</section>
+
+<footer>
+  <div><strong style="color: var(--gold);">有限会社 近藤ミールサービス</strong><br>〒798-3301 愛媛県宇和島市津島町岩松1269-1</div>
+  <div>
+    <a href="index.html">ホーム</a>
+    <a href="company.html">会社情報</a>
+    <a href="contact.html">お問い合わせ</a>
+  </div>
+  <div style="color: #5a4a3a;">© 2024 Kondo Meal Service. All rights reserved.</div>
+</footer>
+
+</body>
+</html>

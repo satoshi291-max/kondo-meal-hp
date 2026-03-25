@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ホテル向けサービス | 近藤ミールサービス</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .service-cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      margin-top: 48px;
+    }
+    .service-card {
+      border: 1px solid var(--gold-light);
+      overflow: hidden;
+    }
+    .service-card .card-img { width: 100%; }
+    .service-card .card-body { padding: 28px; }
+    .service-card h3 { font-size: 22px; color: var(--brown); margin-bottom: 12px; }
+    .service-card p { font-size: 14px; color: #666; line-height: 1.8; margin-bottom: 16px; }
+    .service-card ul { padding-left: 0; list-style: none; }
+    .service-card ul li { font-size: 14px; color: #555; padding: 6px 0; border-bottom: 1px solid var(--beige-dark); }
+    .service-card ul li::before { content: "– "; color: var(--gold); }
+
+    .flow-section { background: var(--beige); }
+    .flow-steps {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
+      margin-top: 48px;
+    }
+    .flow-item {
+      text-align: center;
+      padding: 32px 16px;
+      position: relative;
+    }
+    .flow-item::after {
+      content: "→";
+      position: absolute;
+      right: -12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--gold);
+      font-size: 20px;
+    }
+    .flow-item:last-child::after { display: none; }
+    .flow-item .step-num {
+      width: 40px; height: 40px;
+      background: var(--gold);
+      color: var(--brown-dark);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 16px;
+      margin: 0 auto 12px;
+      font-family: Georgia, serif;
+    }
+    .flow-item h4 { font-size: 15px; color: var(--brown); margin-bottom: 8px; }
+    .flow-item p { font-size: 12px; color: #777; line-height: 1.6; font-family: sans-serif; }
+
+    .merit-section { background: var(--brown-dark); }
+    .merit-section h2 { color: var(--gold); }
+    .merit-section .lead { color: var(--gold-light); }
+    .merit-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .merit-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(201,168,76,0.3);
+      padding: 32px 24px;
+      text-align: center;
+    }
+    .merit-card .icon { font-size: 40px; margin-bottom: 16px; }
+    .merit-card h3 { color: var(--gold); font-size: 18px; margin-bottom: 12px; }
+    .merit-card p { color: var(--gold-light); font-size: 14px; line-height: 1.8; }
+
+    @media (max-width: 768px) {
+      .service-cards { grid-template-columns: 1fr; }
+      .flow-steps { grid-template-columns: 1fr; }
+      .flow-item::after { content: "↓"; right: 50%; top: unset; bottom: -16px; transform: translateX(50%); }
+      .merit-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">KMS <span>近藤ミールサービス</span></a>
+  <nav>
+    <a href="hotel.html" class="active">ホテル向けサービス</a>
+    <a href="cookchil.html">クックチルシステム</a>
+    <a href="custom.html">個別対応</a>
+    <a href="company.html">会社情報</a>
+    <a href="contact.html">お問い合わせ</a>
+  </nav>
+  <div class="hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="hotel.html">ホテル向けサービス</a>
+  <a href="cookchil.html">クックチルシステム</a>
+  <a href="custom.html">個別対応</a>
+  <a href="company.html">会社情報</a>
+  <a href="contact.html">お問い合わせ</a>
+</div>
+
+<div class="page-hero">
+  <p class="section-label">Hotel Service</p>
+  <h1>ホテル向けサービス</h1>
+  <p>朝食ビュッフェからルームサービス・宴会まで。<br>ホテルの食事をKMSがまるごとサポートします。</p>
+</div>
+
+<!-- サービス一覧 -->
+<section style="background: var(--white);">
+  <div class="container">
+    <p class="section-label">Services</p>
+    <h2>提供サービス一覧</h2>
+    <p class="lead">ホテルの規模・スタイルに合わせて、必要なサービスを組み合わせてご利用いただけます。</p>
+    <div class="service-cards">
+
+      <div class="service-card">
+        <div class="img-placeholder card-img" style="min-height:220px; border-radius:0; border:none; border-bottom: 2px dashed var(--gold);">朝食ビュッフェの写真<br><span style="font-size:11px;">料理が並んだビュッフェ台の全体像</span></div>
+        <div class="card-body">
+          <h3>🍳 朝食ビュッフェ</h3>
+          <p>ホテルの顔となる朝食を、品質・コスト・人員の三拍子揃えてサポート。クックチル技術で少人数でも安定した品質を維持します。</p>
+          <ul>
+            <li>和洋バイキング対応</li>
+            <li>アレルギー表示対応</li>
+            <li>季節メニューの入れ替え提案</li>
+            <li>少人数オペレーション設計</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="img-placeholder card-img" style="min-height:220px; border-radius:0; border:none; border-bottom: 2px dashed var(--gold);">宴会・パーティー料理の写真<br><span style="font-size:11px;">コース料理の盛り付けシーン</span></div>
+        <div class="card-body">
+          <h3>🥂 宴会・パーティー</h3>
+          <p>婚礼・企業イベント・懇親会など、特別な場にふさわしい料理を提供します。大人数にも対応できるセントラルキッチンの強みを活かします。</p>
+          <ul>
+            <li>コース・立食どちらも対応</li>
+            <li>50名〜大規模宴会まで</li>
+            <li>特別メニューの相談可</li>
+            <li>宗教食・アレルギー対応</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="img-placeholder card-img" style="min-height:220px; border-radius:0; border:none; border-bottom: 2px dashed var(--gold);">ルームサービスのトレイ写真<br><span style="font-size:11px;">整えられたルームサービスのイメージ</span></div>
+        <div class="card-body">
+          <h3>🛎️ ルームサービス</h3>
+          <p>クックチルで事前調理された食事を、ホテルスタッフが温めて提供するだけ。調理スタッフを最小限に抑えながら24時間対応を実現します。</p>
+          <ul>
+            <li>再加熱のみで提供可能</li>
+            <li>24時間対応設計</li>
+            <li>個別アレルギー対応</li>
+            <li>深夜・早朝メニュー設計</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="img-placeholder card-img" style="min-height:220px; border-radius:0; border:none; border-bottom: 2px dashed var(--gold);">レストラン運営のイメージ写真<br><span style="font-size:11px;">ホテルレストランのダイニングシーン</span></div>
+        <div class="card-body">
+          <h3>🍽️ レストラン運営代行</h3>
+          <p>ホテル内レストランの運営をKMSが代行。メニュー設計から食材調達・調理・人員管理まで、食事部門をまるごとアウトソーシングできます。</p>
+          <ul>
+            <li>メニュー設計・季節更新</li>
+            <li>食材調達・原価管理</li>
+            <li>スタッフ教育・シフト管理</li>
+            <li>衛生管理・HACCP対応</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 導入フロー -->
+<section class="flow-section">
+  <div class="container">
+    <p class="section-label">Flow</p>
+    <h2>ご導入の流れ</h2>
+    <p class="lead">お問い合わせから導入まで、最短2週間で対応可能です。</p>
+    <div class="flow-steps">
+      <div class="flow-item">
+        <div class="step-num">1</div>
+        <h4>お問い合わせ</h4>
+        <p>電話・フォームどちらでも可。まずはお気軽に</p>
+      </div>
+      <div class="flow-item">
+        <div class="step-num">2</div>
+        <h4>ヒアリング</h4>
+        <p>現状の課題・規模・ご要望をお聞きします</p>
+      </div>
+      <div class="flow-item">
+        <div class="step-num">3</div>
+        <h4>提案・見積</h4>
+        <p>メニュー案・費用感をご提示します（無料）</p>
+      </div>
+      <div class="flow-item">
+        <div class="step-num">4</div>
+        <h4>契約・準備</h4>
+        <p>契約締結後、食材・メニュー・体制を整備</p>
+      </div>
+      <div class="flow-item">
+        <div class="step-num">5</div>
+        <h4>サービス開始</h4>
+        <p>開始後も定期的に品質確認・改善提案</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 導入メリット -->
+<section class="merit-section">
+  <div class="container">
+    <p class="section-label">Merit</p>
+    <h2>KMSに任せるメリット</h2>
+    <p class="lead">人手不足・コスト・品質——ホテルの食事が抱える課題を一気に解決します。</p>
+    <div class="merit-grid">
+      <div class="merit-card">
+        <div class="icon">👥</div>
+        <h3>人手不足を解消</h3>
+        <p>クックチル技術により、ホテル側の調理スタッフを最小限に。少ない人員でも安定した食事提供が可能になります。</p>
+      </div>
+      <div class="merit-card">
+        <div class="icon">💴</div>
+        <h3>コストを最適化</h3>
+        <p>大量調理によるスケールメリットと食材調達力で、品質を落とさずコストを削減。食材廃棄ロスも低減します。</p>
+      </div>
+      <div class="merit-card">
+        <div class="icon">⭐</div>
+        <h3>品質が安定する</h3>
+        <p>セントラルキッチンでの一括調理とクックチル管理により、担当者が変わっても同じ品質を維持できます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>まずはご相談ください</h2>
+  <p>ホテルの食事に関するご要望・お悩みをお聞かせください。<br>ヒアリングから提案・見積もりまで無料でご対応します。</p>
+  <div class="cta-buttons">
+    <a href="contact.html" class="btn-primary">お問い合わせはこちら</a>
+  </div>
+  <div class="tel">0895-49-5085<span>受付時間：平日 9:00〜17:00</span></div>
+</section>
+
+<footer>
+  <div><strong style="color: var(--gold);">有限会社 近藤ミールサービス</strong><br>〒798-3301 愛媛県宇和島市津島町岩松1269-1</div>
+  <div>
+    <a href="index.html">ホーム</a>
+    <a href="company.html">会社情報</a>
+    <a href="contact.html">お問い合わせ</a>
+  </div>
+  <div style="color: #5a4a3a;">© 2024 Kondo Meal Service. All rights reserved.</div>
+</footer>
+
+</body>
+</html>

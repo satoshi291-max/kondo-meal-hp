@@ -1,0 +1,178 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --gold: #c9a84c;
+  --gold-light: #e8d5a3;
+  --brown: #6b4226;
+  --brown-dark: #3e2312;
+  --beige: #faf6ee;
+  --beige-dark: #f0e8d6;
+  --text: #333;
+  --white: #fff;
+}
+
+body {
+  font-family: 'Hiragino Mincho ProN', 'Yu Mincho', serif;
+  color: var(--text);
+  background: var(--white);
+}
+
+/* ── ナビ ── */
+header {
+  background: var(--brown-dark);
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.logo { color: var(--gold); font-size: 22px; font-weight: bold; letter-spacing: 2px; text-decoration: none; display: block; }
+.logo span { font-size: 12px; color: var(--gold-light); display: block; letter-spacing: 1px; }
+nav a {
+  color: var(--gold-light);
+  text-decoration: none;
+  margin-left: 28px;
+  font-size: 14px;
+  font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+}
+nav a:hover, nav a.active { color: var(--gold); }
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+}
+.hamburger span { width: 24px; height: 2px; background: var(--gold); display: block; }
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: var(--brown-dark);
+  padding: 16px 20px;
+  border-top: 1px solid rgba(201,168,76,0.2);
+}
+.mobile-menu a {
+  color: var(--gold-light);
+  text-decoration: none;
+  padding: 12px 0;
+  font-size: 15px;
+  font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+  border-bottom: 1px solid rgba(201,168,76,0.1);
+}
+.mobile-menu.open { display: flex; }
+
+/* ── ページヒーロー ── */
+.page-hero {
+  background: var(--brown-dark);
+  padding: 80px 40px;
+  text-align: center;
+}
+.page-hero .section-label { color: var(--gold); font-size: 12px; letter-spacing: 4px; font-family: sans-serif; margin-bottom: 12px; }
+.page-hero h1 { color: var(--white); font-size: 40px; margin-bottom: 16px; }
+.page-hero p { color: var(--gold-light); font-size: 16px; line-height: 1.8; }
+
+/* ── セクション共通 ── */
+section { padding: 80px 40px; }
+.container { max-width: 1100px; margin: 0 auto; }
+.section-label {
+  font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+  font-size: 12px;
+  color: var(--gold);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+h2 { font-size: 32px; color: var(--brown-dark); margin-bottom: 16px; }
+.lead { font-size: 16px; color: #666; line-height: 1.9; margin-bottom: 48px; }
+
+/* ── プレースホルダー ── */
+.img-placeholder {
+  background: linear-gradient(135deg, #d4c4a0, #b8a070);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 12px;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 12px;
+  color: var(--brown-dark);
+  border: 2px dashed var(--gold);
+  min-height: 180px;
+}
+.img-placeholder::before { content: "📷"; font-size: 28px; display: block; margin-bottom: 8px; }
+
+/* ── ボタン ── */
+.btn-primary {
+  background: var(--gold);
+  color: var(--brown-dark);
+  padding: 14px 36px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 2px;
+  font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+  letter-spacing: 1px;
+  display: inline-block;
+}
+.btn-primary:hover { background: #e8c460; }
+.btn-secondary {
+  border: 2px solid var(--gold);
+  color: var(--gold);
+  padding: 14px 36px;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+  border-radius: 2px;
+  display: inline-block;
+}
+.btn-secondary:hover { background: rgba(201,168,76,0.1); }
+
+/* ── CTA ── */
+.cta-section { background: var(--brown); text-align: center; padding: 80px 40px; }
+.cta-section h2 { color: var(--gold); font-size: 36px; margin-bottom: 16px; }
+.cta-section p { color: var(--gold-light); font-size: 16px; margin-bottom: 40px; line-height: 1.8; }
+.cta-buttons { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; }
+.tel { color: var(--gold); font-size: 32px; font-family: Georgia, serif; margin-top: 32px; }
+.tel span { font-size: 14px; display: block; color: var(--gold-light); font-family: sans-serif; }
+
+/* ── フッター ── */
+footer {
+  background: var(--brown-dark);
+  color: var(--gold-light);
+  padding: 40px;
+  font-family: sans-serif;
+  font-size: 13px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+footer a { color: var(--gold-light); text-decoration: none; margin-left: 20px; }
+
+/* ── レスポンシブ ── */
+@media (max-width: 768px) {
+  header { padding: 0 20px; height: 60px; }
+  nav { display: none; }
+  .hamburger { display: flex; }
+
+  .page-hero { padding: 56px 20px; }
+  .page-hero h1 { font-size: 28px; }
+  .page-hero p { font-size: 14px; }
+
+  section { padding: 56px 20px; }
+  h2 { font-size: 24px; }
+  .lead { font-size: 14px; margin-bottom: 32px; }
+
+  .cta-section h2 { font-size: 26px; }
+  .cta-buttons { flex-direction: column; align-items: center; }
+  .tel { font-size: 26px; }
+
+  footer { flex-direction: column; gap: 12px; text-align: center; padding: 32px 20px; }
+  footer a { margin-left: 12px; }
+}

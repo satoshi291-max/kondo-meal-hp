@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お問い合わせ | 近藤ミールサービス</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 64px;
+      margin-top: 48px;
+    }
+
+    /* フォーム */
+    .form-group { margin-bottom: 28px; }
+    .form-group label {
+      display: block;
+      font-size: 14px;
+      color: var(--brown);
+      margin-bottom: 8px;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      font-weight: bold;
+    }
+    .form-group label .required {
+      background: var(--brown);
+      color: var(--gold-light);
+      font-size: 11px;
+      padding: 2px 6px;
+      margin-left: 8px;
+      border-radius: 2px;
+    }
+    .form-group label .optional {
+      background: #ccc;
+      color: #666;
+      font-size: 11px;
+      padding: 2px 6px;
+      margin-left: 8px;
+      border-radius: 2px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--gold-light);
+      background: var(--beige);
+      font-size: 15px;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      color: var(--text);
+      border-radius: 2px;
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--gold);
+      background: var(--white);
+    }
+    .form-group textarea { height: 160px; resize: vertical; }
+    .form-group select { cursor: pointer; }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .privacy-check {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13px;
+      color: #666;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      margin-bottom: 32px;
+      line-height: 1.7;
+    }
+    .privacy-check input { width: auto; margin-top: 3px; }
+    .privacy-check a { color: var(--gold); }
+    .submit-btn {
+      width: 100%;
+      background: var(--gold);
+      color: var(--brown-dark);
+      border: none;
+      padding: 16px;
+      font-size: 16px;
+      font-weight: bold;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      cursor: pointer;
+      letter-spacing: 2px;
+      border-radius: 2px;
+    }
+    .submit-btn:hover { background: #e8c460; }
+
+    /* サイドバー */
+    .contact-sidebar { }
+    .sidebar-card {
+      background: var(--beige);
+      padding: 32px;
+      margin-bottom: 24px;
+      border-top: 3px solid var(--gold);
+    }
+    .sidebar-card h3 {
+      font-size: 18px;
+      color: var(--brown);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .sidebar-card .tel-num {
+      font-size: 28px;
+      color: var(--brown-dark);
+      font-family: Georgia, serif;
+      margin-bottom: 6px;
+    }
+    .sidebar-card p {
+      font-size: 13px;
+      color: #888;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      line-height: 1.7;
+    }
+    .faq-list { list-style: none; }
+    .faq-list li {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--gold-light);
+      font-size: 14px;
+      color: var(--brown);
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+    .faq-list li::before { content: "Q. "; color: var(--gold); font-weight: bold; }
+    .faq-answer {
+      font-size: 13px;
+      color: #666;
+      padding: 4px 0 8px 24px;
+    }
+
+    @media (max-width: 768px) {
+      .contact-wrapper { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">KMS <span>近藤ミールサービス</span></a>
+  <nav>
+    <a href="hotel.html">ホテル向けサービス</a>
+    <a href="cookchil.html">クックチルシステム</a>
+    <a href="custom.html">個別対応</a>
+    <a href="company.html">会社情報</a>
+    <a href="contact.html" class="active">お問い合わせ</a>
+  </nav>
+  <div class="hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="hotel.html">ホテル向けサービス</a>
+  <a href="cookchil.html">クックチルシステム</a>
+  <a href="custom.html">個別対応</a>
+  <a href="company.html">会社情報</a>
+  <a href="contact.html">お問い合わせ</a>
+</div>
+
+<div class="page-hero">
+  <p class="section-label">Contact</p>
+  <h1>お問い合わせ</h1>
+  <p>サービスについてのご質問・資料請求・お見積もりなど、<br>お気軽にご連絡ください。</p>
+</div>
+
+<section style="background: var(--white);">
+  <div class="container">
+    <div class="contact-wrapper">
+
+      <!-- フォーム -->
+      <div>
+        <p class="section-label">Form</p>
+        <h2 style="margin-bottom: 8px;">お問い合わせフォーム</h2>
+        <p style="font-size: 14px; color: #888; font-family: sans-serif; margin-bottom: 40px;">通常2営業日以内にご返信いたします。</p>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>会社名・施設名 <span class="required">必須</span></label>
+            <input type="text" placeholder="例：〇〇ホテル">
+          </div>
+          <div class="form-group">
+            <label>部署名 <span class="optional">任意</span></label>
+            <input type="text" placeholder="例：食堂部">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>お名前 <span class="required">必須</span></label>
+            <input type="text" placeholder="例：近藤 幸雄">
+          </div>
+          <div class="form-group">
+            <label>電話番号 <span class="required">必須</span></label>
+            <input type="tel" placeholder="例：0895-49-5085">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>メールアドレス <span class="required">必須</span></label>
+          <input type="email" placeholder="例：info@example.com">
+        </div>
+
+        <div class="form-group">
+          <label>お問い合わせ種別 <span class="required">必須</span></label>
+          <select>
+            <option value="">選択してください</option>
+            <option>ホテル向けサービスについて</option>
+            <option>クックチルシステムについて</option>
+            <option>個別対応・アレルギー対応について</option>
+            <option>食材供給について</option>
+            <option>お見積もりのご依頼</option>
+            <option>資料請求</option>
+            <option>その他</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>施設の種別 <span class="optional">任意</span></label>
+          <select>
+            <option value="">選択してください</option>
+            <option>ホテル・旅館</option>
+            <option>介護施設・老人ホーム</option>
+            <option>病院・医療機関</option>
+            <option>学校・教育機関</option>
+            <option>その他</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>お問い合わせ内容 <span class="required">必須</span></label>
+          <textarea placeholder="ご要望・ご質問をご記入ください。&#10;例：ホテルの朝食ビュッフェを外部委託したい。現在50名規模で運営しており、コスト削減と人手不足解消が課題です。"></textarea>
+        </div>
+
+        <div class="privacy-check">
+          <input type="checkbox" id="privacy">
+          <label for="privacy">
+            <a href="#">プライバシーポリシー</a>に同意する
+          </label>
+        </div>
+
+        <button class="submit-btn">送 信 す る</button>
+      </div>
+
+      <!-- サイドバー -->
+      <div class="contact-sidebar">
+        <div class="sidebar-card">
+          <h3>📞 お電話でのお問い合わせ</h3>
+          <div class="tel-num">0895-49-5085</div>
+          <p>受付時間：平日 9:00〜17:00<br>土日祝日・年末年始はお休みです</p>
+        </div>
+
+        <div class="sidebar-card">
+          <h3>📠 FAXでのお問い合わせ</h3>
+          <p style="font-size: 16px; font-family: Georgia; color: var(--brown-dark); margin-bottom: 6px;">0895-49-5086</p>
+          <p>24時間受付<br>返信は翌営業日以降となります</p>
+        </div>
+
+        <div class="sidebar-card">
+          <h3>❓ よくあるご質問</h3>
+          <ul class="faq-list">
+            <li>
+              対応エリアはどこですか？
+              <div class="faq-answer">愛媛県・大分県を中心に四国・九州エリアに対応しています。詳細はお問い合わせください。</div>
+            </li>
+            <li>
+              見積もりは無料ですか？
+              <div class="faq-answer">はい、お見積もりは無料です。まずはお気軽にご相談ください。</div>
+            </li>
+            <li>
+              導入までどのくらいかかりますか？
+              <div class="faq-answer">ヒアリング〜提案〜契約〜開始まで、最短2週間程度です。</div>
+            </li>
+            <li>
+              小規模施設でも対応できますか？
+              <div class="faq-answer">10名規模からご対応可能です。まずはご相談ください。</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div><strong style="color: var(--gold);">有限会社 近藤ミールサービス</strong><br>〒798-3301 愛媛県宇和島市津島町岩松1269-1</div>
+  <div>
+    <a href="index.html">ホーム</a>
+    <a href="company.html">会社情報</a>
+    <a href="contact.html">お問い合わせ</a>
+  </div>
+  <div style="color: #5a4a3a;">© 2024 Kondo Meal Service. All rights reserved.</div>
+</footer>
+
+</body>
+</html>

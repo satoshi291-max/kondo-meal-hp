@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>近藤ミールサービス | ホテルの食事、まるごとお任せください</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --gold: #c9a84c;
+      --gold-light: #e8d5a3;
+      --brown: #6b4226;
+      --brown-dark: #3e2312;
+      --beige: #faf6ee;
+      --beige-dark: #f0e8d6;
+      --text: #333;
+      --white: #fff;
+    }
+
+    body {
+      font-family: 'Hiragino Mincho ProN', 'Yu Mincho', serif;
+      color: var(--text);
+      background: var(--white);
+    }
+
+    /* ── ナビ ── */
+    header {
+      background: var(--brown-dark);
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo {
+      color: var(--gold);
+      font-size: 22px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+    .logo span { font-size: 12px; color: var(--gold-light); display: block; letter-spacing: 1px; }
+    nav a {
+      color: var(--gold-light);
+      text-decoration: none;
+      margin-left: 28px;
+      font-size: 14px;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+    nav a:hover { color: var(--gold); }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .hamburger span {
+      width: 24px;
+      height: 2px;
+      background: var(--gold);
+      display: block;
+    }
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: var(--brown-dark);
+      padding: 16px 20px;
+      border-top: 1px solid rgba(201,168,76,0.2);
+    }
+    .mobile-menu a {
+      color: var(--gold-light);
+      text-decoration: none;
+      padding: 12px 0;
+      font-size: 15px;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      border-bottom: 1px solid rgba(201,168,76,0.1);
+    }
+    .mobile-menu.open { display: flex; }
+    @media (max-width: 768px) {
+      .hamburger { display: flex; }
+    }
+
+    /* ── ヒーロー ── */
+    .hero {
+      position: relative;
+      height: 600px;
+      overflow: hidden;
+    }
+    .hero-img-placeholder {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #2c1a0e 0%, #5c3d1e 50%, #8b5e3c 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .placeholder-label {
+      border: 2px dashed var(--gold);
+      color: var(--gold-light);
+      font-family: sans-serif;
+      font-size: 14px;
+      padding: 12px 24px;
+      border-radius: 6px;
+      margin-bottom: 16px;
+      background: rgba(0,0,0,0.3);
+    }
+    .placeholder-label::before { content: "📷 "; }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(30,15,5,0.75) 40%, transparent 100%);
+      display: flex;
+      align-items: center;
+      padding: 0 80px;
+    }
+    .hero-text h1 {
+      color: var(--white);
+      font-size: 42px;
+      line-height: 1.4;
+      margin-bottom: 16px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    }
+    .hero-text h1 span { color: var(--gold); }
+    .hero-text p {
+      color: var(--gold-light);
+      font-size: 16px;
+      margin-bottom: 32px;
+      line-height: 1.8;
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: var(--brown-dark);
+      padding: 14px 36px;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: bold;
+      border-radius: 2px;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      letter-spacing: 1px;
+    }
+    .btn-primary:hover { background: #e8c460; }
+
+    /* ── セクション共通 ── */
+    section { padding: 80px 40px; }
+    .section-label {
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      font-size: 12px;
+      color: var(--gold);
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    h2 {
+      font-size: 32px;
+      color: var(--brown-dark);
+      margin-bottom: 16px;
+    }
+    .lead {
+      font-size: 16px;
+      color: #666;
+      line-height: 1.9;
+      margin-bottom: 48px;
+    }
+    .container { max-width: 1100px; margin: 0 auto; }
+
+    /* ── ホテル実績 ── */
+    .hotel-section { background: var(--beige); }
+    .hotel-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .hotel-img-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .img-placeholder {
+      background: linear-gradient(135deg, #d4c4a0, #b8a070);
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 12px;
+      text-align: center;
+      font-family: sans-serif;
+      font-size: 12px;
+      color: var(--brown-dark);
+      border: 2px dashed var(--gold);
+      min-height: 160px;
+    }
+    .img-placeholder::before { content: "📷"; font-size: 28px; display: block; margin-bottom: 8px; }
+    .img-placeholder.tall { grid-row: span 2; }
+
+    .hotel-text h3 { font-size: 26px; color: var(--brown); margin-bottom: 16px; }
+    .hotel-text p { line-height: 1.9; color: #555; margin-bottom: 16px; }
+    .tag-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+    .tag {
+      background: var(--brown);
+      color: var(--gold-light);
+      padding: 6px 16px;
+      font-size: 13px;
+      border-radius: 2px;
+      font-family: sans-serif;
+    }
+
+    /* ── 強み3本柱 ── */
+    .strengths-section { background: var(--white); }
+    .strength-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 48px;
+    }
+    .strength-card {
+      border-top: 3px solid var(--gold);
+      padding: 32px 24px;
+      background: var(--beige);
+    }
+    .strength-card .num {
+      font-size: 40px;
+      color: var(--gold);
+      font-family: Georgia, serif;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .strength-card h3 { font-size: 20px; color: var(--brown-dark); margin-bottom: 12px; }
+    .strength-card p { font-size: 14px; color: #666; line-height: 1.8; }
+
+    /* ── クックチルシステム ── */
+    .cookchil-section { background: var(--brown-dark); color: var(--white); }
+    .cookchil-section h2 { color: var(--gold); }
+    .cookchil-section .lead { color: var(--gold-light); }
+    .cookchil-flow {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      margin-top: 48px;
+      flex-wrap: wrap;
+    }
+    .flow-step {
+      flex: 1;
+      min-width: 140px;
+      text-align: center;
+      padding: 24px 16px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(201,168,76,0.3);
+    }
+    .flow-step .icon { font-size: 32px; margin-bottom: 8px; }
+    .flow-step h4 { color: var(--gold); font-size: 15px; margin-bottom: 6px; }
+    .flow-step p { font-size: 12px; color: var(--gold-light); line-height: 1.6; }
+    .flow-arrow {
+      color: var(--gold);
+      font-size: 24px;
+      padding: 0 8px;
+      flex-shrink: 0;
+    }
+    .cookchil-img {
+      margin-top: 48px;
+      background: rgba(255,255,255,0.05);
+      border: 2px dashed var(--gold);
+      border-radius: 4px;
+      padding: 40px;
+      text-align: center;
+      color: var(--gold-light);
+      font-family: sans-serif;
+      font-size: 14px;
+    }
+    .cookchil-img::before { content: "📷"; font-size: 32px; display: block; margin-bottom: 8px; }
+
+    /* ── 個別対応 ── */
+    .custom-section { background: var(--beige-dark); }
+    .custom-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+      margin-top: 48px;
+    }
+    .custom-list { list-style: none; }
+    .custom-list li {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--gold-light);
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    .custom-list li::before {
+      content: "✓";
+      color: var(--gold);
+      font-weight: bold;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .custom-img-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    /* ── 導入実績 ── */
+    .results-section { background: var(--white); }
+    .result-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .result-card {
+      text-align: center;
+      padding: 32px 16px;
+      border: 1px solid var(--gold-light);
+    }
+    .result-card .icon { font-size: 40px; margin-bottom: 12px; }
+    .result-card h3 { font-size: 16px; color: var(--brown); margin-bottom: 8px; }
+    .result-card p { font-size: 13px; color: #888; line-height: 1.6; }
+    .result-card.highlight { background: var(--brown-dark); border-color: var(--gold); }
+    .result-card.highlight h3 { color: var(--gold); }
+    .result-card.highlight p { color: var(--gold-light); }
+
+    /* ── 数字で見る実績 ── */
+    .numbers-section { background: var(--beige); }
+    .numbers-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      margin-top: 48px;
+      text-align: center;
+    }
+    .number-item .num {
+      font-size: 52px;
+      color: var(--gold);
+      font-family: Georgia, serif;
+      font-weight: bold;
+      line-height: 1;
+    }
+    .number-item .unit { font-size: 18px; color: var(--brown); }
+    .number-item p { font-size: 14px; color: #666; margin-top: 8px; font-family: sans-serif; }
+
+    /* ── お問い合わせ ── */
+    .cta-section { background: var(--brown); text-align: center; padding: 80px 40px; }
+    .cta-section h2 { color: var(--gold); font-size: 36px; margin-bottom: 16px; }
+    .cta-section p { color: var(--gold-light); font-size: 16px; margin-bottom: 40px; line-height: 1.8; }
+    .cta-buttons { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; }
+    .btn-secondary {
+      border: 2px solid var(--gold);
+      color: var(--gold);
+      padding: 14px 36px;
+      text-decoration: none;
+      font-size: 15px;
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      border-radius: 2px;
+    }
+    .btn-secondary:hover { background: rgba(201,168,76,0.1); }
+    .tel {
+      color: var(--gold);
+      font-size: 32px;
+      font-family: Georgia, serif;
+      margin-top: 32px;
+    }
+    .tel span { font-size: 14px; display: block; color: var(--gold-light); font-family: sans-serif; }
+
+    /* ── フッター ── */
+    footer {
+      background: var(--brown-dark);
+      color: var(--gold-light);
+      padding: 40px;
+      font-family: sans-serif;
+      font-size: 13px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    footer a { color: var(--gold-light); text-decoration: none; margin-left: 20px; }
+
+    /* ── レスポンシブ（スマホ） ── */
+    @media (max-width: 768px) {
+      header {
+        padding: 0 20px;
+        height: 60px;
+      }
+      nav { display: none; }
+
+      .hero { height: 420px; }
+      .hero-overlay { padding: 0 24px; }
+      .hero-text h1 { font-size: 26px; }
+      .hero-text p { font-size: 14px; margin-bottom: 20px; }
+      .btn-primary { padding: 12px 24px; font-size: 14px; }
+
+      section { padding: 56px 20px; }
+      h2 { font-size: 24px; }
+      .lead { font-size: 14px; margin-bottom: 32px; }
+
+      .hotel-grid { grid-template-columns: 1fr; }
+      .hotel-img-block { grid-template-columns: 1fr 1fr; }
+      .img-placeholder.tall { grid-row: span 1; }
+
+      .strength-cards { grid-template-columns: 1fr; gap: 20px; }
+
+      .cookchil-flow { flex-direction: column; gap: 4px; }
+      .flow-arrow { transform: rotate(90deg); }
+      .flow-step { min-width: unset; width: 100%; }
+
+      .custom-grid { grid-template-columns: 1fr; }
+      .custom-img-block { grid-template-columns: 1fr 1fr; }
+      .img-placeholder.tall { grid-row: span 1; }
+
+      .numbers-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+      .number-item .num { font-size: 40px; }
+
+      .result-cards { grid-template-columns: 1fr 1fr; gap: 16px; }
+
+      .cta-section h2 { font-size: 26px; }
+      .cta-buttons { flex-direction: column; align-items: center; }
+      .tel { font-size: 26px; }
+
+      footer { flex-direction: column; gap: 12px; text-align: center; padding: 32px 20px; }
+      footer a { margin-left: 12px; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-text h1 { font-size: 22px; }
+      .result-cards { grid-template-columns: 1fr; }
+      .numbers-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ナビゲーション -->
+<header>
+  <div class="logo">
+    KMS
+    <span>近藤ミールサービス</span>
+  </div>
+  <nav>
+    <a href="hotel.html">ホテル向けサービス</a>
+    <a href="cookchil.html">クックチルシステム</a>
+    <a href="custom.html">個別対応</a>
+    <a href="company.html">会社情報</a>
+    <a href="contact.html">お問い合わせ</a>
+  </nav>
+  <div class="hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="hotel.html">ホテル向けサービス</a>
+  <a href="cookchil.html">クックチルシステム</a>
+  <a href="custom.html">個別対応</a>
+  <a href="company.html">会社情報</a>
+  <a href="contact.html">お問い合わせ</a>
+</div>
+
+<!-- ヒーロー -->
+<div class="hero">
+  <div class="hero-img-placeholder">
+    <div class="placeholder-label">ホテルのレストラン・食事シーンの写真（横長・高品質）</div>
+    <div style="color: #a08060; font-family: sans-serif; font-size: 13px;">推奨サイズ: 1600×600px</div>
+  </div>
+  <div class="hero-overlay">
+    <div class="hero-text">
+      <h1>ホテルの食事を、<br><span>もっと上質に。</span><br>もっとシンプルに。</h1>
+      <p>クックチルシステムと専任シェフチームで、<br>ホテルの食事課題をまるごと解決します。</p>
+      <a href="#" class="btn-primary">ホテル向けサービスを見る</a>
+    </div>
+  </div>
+</div>
+
+<!-- ホテル向け実績 -->
+<section class="hotel-section">
+  <div class="container">
+    <div class="hotel-grid">
+      <div class="hotel-img-block">
+        <div class="img-placeholder tall">ホテル朝食<br>ビュッフェの写真<br>縦長</div>
+        <div class="img-placeholder">コース料理<br>盛り付けの写真</div>
+        <div class="img-placeholder">ルームサービス<br>の写真</div>
+      </div>
+      <div class="hotel-text">
+        <p class="section-label">Hotel Service</p>
+        <h3>ホテルの食事課題、<br>KMSが解決します</h3>
+        <p>人手不足・コスト高騰・品質のばらつき——ホテルの食事部門が抱える課題は複雑です。KMSは創業1967年から培った給食のノウハウとクックチル技術で、ホテルの食事をトータルサポートします。</p>
+        <p>朝食ビュッフェからルームサービス、宴会料理まで。少ない人員でも安定した品質を実現します。</p>
+        <div class="tag-list">
+          <span class="tag">朝食ビュッフェ</span>
+          <span class="tag">宴会・パーティー</span>
+          <span class="tag">ルームサービス</span>
+          <span class="tag">レストラン運営代行</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 強み3本柱 -->
+<section class="strengths-section">
+  <div class="container">
+    <p class="section-label">Our Strength</p>
+    <h2>KMSが選ばれる3つの理由</h2>
+    <p class="lead">創業57年・従業員180名・愛媛県内セントラルキッチン稼働。<br>地方発・全国水準のフードサービスを提供します。</p>
+    <div class="strength-cards">
+      <div class="strength-card">
+        <div class="num">01</div>
+        <h3>クックチルシステム</h3>
+        <p>中央調理室で一括調理し、急速冷却・真空パックで品質を保持。ホテル厨房での再加熱のみで、安定した味と衛生を実現します。</p>
+      </div>
+      <div class="strength-card">
+        <div class="num">02</div>
+        <h3>セントラルキッチン</h3>
+        <p>松山・別府の2拠点で稼働。大量調理でもブレない品質と、万が一の際のバックアップ体制を整えています。</p>
+      </div>
+      <div class="strength-card">
+        <div class="num">03</div>
+        <h3>徹底した個別対応</h3>
+        <p>アレルギー対応・グラム指定・食形態変更など、ホテルの多様なゲストニーズにきめ細かく対応します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- クックチルシステム詳細 -->
+<section class="cookchil-section">
+  <div class="container">
+    <p class="section-label">Cook-Chill System</p>
+    <h2>クックチルシステムとは</h2>
+    <p class="lead">加熱調理後、90分以内に3℃以下まで急速冷却。<br>品質・衛生・効率を同時に高める、KMSの核心技術です。</p>
+    <div class="cookchil-flow">
+      <div class="flow-step">
+        <div class="icon">🍳</div>
+        <h4>加熱調理</h4>
+        <p>セントラルキッチンで一括調理</p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="icon">❄️</div>
+        <h4>急速冷却</h4>
+        <p>90分以内に3℃以下へ</p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="icon">📦</div>
+        <h4>真空パック</h4>
+        <p>衛生的に個別包装</p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="icon">🚚</div>
+        <h4>配送</h4>
+        <p>チルド状態でホテルへ</p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="icon">🍽️</div>
+        <h4>再加熱・提供</h4>
+        <p>ホテル厨房で温めるだけ</p>
+      </div>
+    </div>
+    <div class="cookchil-img">
+      クックチルシステムの工程写真（調理室・急速冷却機・真空パック機など）<br>
+      <span style="font-size:12px; color:#8a7a5a;">推奨: 横長3枚並び または 工程動画</span>
+    </div>
+  </div>
+</section>
+
+<!-- 個別対応 -->
+<section class="custom-section">
+  <div class="container">
+    <p class="section-label">Customization</p>
+    <h2>ホテルゲストの<br>多様なニーズに対応</h2>
+    <div class="custom-grid">
+      <div>
+        <p style="line-height:1.9; color:#555; margin-bottom:24px;">食事形態・アレルギー・宗教食など、ホテルには多様なゲストが集まります。KMSは事前の打ち合わせをもとに、個別対応メニューを柔軟に準備します。</p>
+        <ul class="custom-list">
+          <li>アレルギー対応（8品目・28品目）</li>
+          <li>グラム指定・カロリー管理</li>
+          <li>食形態変更（きざみ・ムース食など）</li>
+          <li>ハラール・ベジタリアン対応（要相談）</li>
+          <li>体調不良時の急なメニュー変更</li>
+          <li>宴会・イベント向け特別メニュー</li>
+        </ul>
+      </div>
+      <div class="custom-img-block">
+        <div class="img-placeholder tall">アレルギー対応<br>メニューの写真</div>
+        <div class="img-placeholder">特別食・<br>行事食の写真</div>
+        <div class="img-placeholder">宴会料理<br>の写真</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 数字で見る実績 -->
+<section class="numbers-section">
+  <div class="container">
+    <p class="section-label">Numbers</p>
+    <h2>数字で見るKMS</h2>
+    <div class="numbers-grid">
+      <div class="number-item">
+        <div><span class="num">57</span><span class="unit">年</span></div>
+        <p>創業1967年からの実績</p>
+      </div>
+      <div class="number-item">
+        <div><span class="num">180</span><span class="unit">名</span></div>
+        <p>フードサービス専任スタッフ</p>
+      </div>
+      <div class="number-item">
+        <div><span class="num">365</span><span class="unit">日</span></div>
+        <p>年間無休で安定供給</p>
+      </div>
+      <div class="number-item">
+        <div><span class="num">2</span><span class="unit">拠点</span></div>
+        <p>松山・別府セントラルキッチン</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 導入実績 -->
+<section class="results-section">
+  <div class="container">
+    <p class="section-label">Achievements</p>
+    <h2>さまざまな施設での導入実績</h2>
+    <p class="lead">ホテルから自衛隊まで。多様な現場で培ったノウハウを活かします。</p>
+    <div class="result-cards">
+      <div class="result-card highlight">
+        <div class="icon">🏨</div>
+        <h3>ホテル</h3>
+        <p>朝食・宴会・ルームサービスをトータル対応</p>
+      </div>
+      <div class="result-card">
+        <div class="icon">🏥</div>
+        <h3>介護・医療施設</h3>
+        <p>個別対応・栄養管理の豊富な実績</p>
+      </div>
+      <div class="result-card">
+        <div class="icon">🎓</div>
+        <h3>学校・教育機関</h3>
+        <p>給食運営・アレルギー対応</p>
+      </div>
+      <div class="result-card">
+        <div class="icon">🪖</div>
+        <h3>自衛隊</h3>
+        <p>大量調理・365日安定供給の実績</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- お問い合わせCTA -->
+<section class="cta-section">
+  <h2>まずはご相談ください</h2>
+  <p>ホテルの食事に関するご要望・お悩みをお聞かせください。<br>現状のヒアリングから提案・見積もりまで、無料でご対応します。</p>
+  <div class="cta-buttons">
+    <a href="#" class="btn-primary">お問い合わせフォーム</a>
+    <a href="#" class="btn-secondary">資料ダウンロード</a>
+  </div>
+  <div class="tel">
+    0895-49-5085
+    <span>受付時間：平日 9:00〜17:00</span>
+  </div>
+</section>
+
+<!-- フッター -->
+<footer>
+  <div>
+    <strong style="color: var(--gold);">有限会社 近藤ミールサービス</strong><br>
+    〒798-3301 愛媛県宇和島市津島町岩松1269-1
+  </div>
+  <div>
+    <a href="#">プライバシーポリシー</a>
+    <a href="#">会社情報</a>
+    <a href="#">お問い合わせ</a>
+  </div>
+  <div style="color: #5a4a3a;">© 2024 Kondo Meal Service. All rights reserved.</div>
+</footer>
+
+</body>
+</html>

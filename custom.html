@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>個別対応・メニュー対応 | 近藤ミールサービス</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .custom-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 48px;
+    }
+    .custom-card {
+      background: var(--white);
+      border: 1px solid var(--gold-light);
+      overflow: hidden;
+    }
+    .custom-card .card-header {
+      background: var(--brown);
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .custom-card .card-header .icon { font-size: 28px; }
+    .custom-card .card-header h3 { color: var(--gold-light); font-size: 18px; }
+    .custom-card .card-body { padding: 24px; }
+    .custom-card .card-body p { font-size: 14px; color: #666; line-height: 1.8; margin-bottom: 16px; }
+    .custom-card ul { list-style: none; padding: 0; }
+    .custom-card ul li {
+      font-size: 13px;
+      color: #555;
+      padding: 6px 0;
+      border-bottom: 1px solid var(--beige-dark);
+      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    }
+    .custom-card ul li::before { content: "✓ "; color: var(--gold); font-weight: bold; }
+
+    .example-section { background: var(--beige-dark); }
+    .example-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-top: 48px;
+    }
+    .example-card {
+      background: var(--white);
+      border-left: 4px solid var(--gold);
+      padding: 28px;
+    }
+    .example-card .situation {
+      font-size: 13px;
+      color: var(--brown);
+      font-family: sans-serif;
+      font-weight: bold;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+    }
+    .example-card h3 { font-size: 18px; color: var(--brown-dark); margin-bottom: 12px; }
+    .example-card .arrow {
+      text-align: center;
+      font-size: 24px;
+      color: var(--gold);
+      margin: 16px 0;
+    }
+    .example-card .solution {
+      background: var(--beige);
+      padding: 16px;
+      font-size: 14px;
+      color: var(--brown);
+      border-radius: 2px;
+      line-height: 1.7;
+    }
+
+    .allergy-section { background: var(--white); }
+    .allergy-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 40px;
+    }
+    .allergy-tag {
+      background: var(--beige);
+      border: 1px solid var(--gold-light);
+      padding: 12px;
+      text-align: center;
+      font-size: 14px;
+      color: var(--brown);
+      font-family: sans-serif;
+    }
+    .allergy-tag.major { background: var(--brown); color: var(--gold-light); border-color: var(--brown); }
+
+    @media (max-width: 768px) {
+      .custom-grid { grid-template-columns: 1fr; }
+      .example-grid { grid-template-columns: 1fr; }
+      .allergy-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">KMS <span>近藤ミールサービス</span></a>
+  <nav>
+    <a href="hotel.html">ホテル向けサービス</a>
+    <a href="cookchil.html">クックチルシステム</a>
+    <a href="custom.html" class="active">個別対応</a>
+    <a href="company.html">会社情報</a>
+    <a href="contact.html">お問い合わせ</a>
+  </nav>
+  <div class="hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="hotel.html">ホテル向けサービス</a>
+  <a href="cookchil.html">クックチルシステム</a>
+  <a href="custom.html">個別対応</a>
+  <a href="company.html">会社情報</a>
+  <a href="contact.html">お問い合わせ</a>
+</div>
+
+<div class="page-hero">
+  <p class="section-label">Customization</p>
+  <h1>個別対応・メニュー対応</h1>
+  <p>アレルギー・食形態・宗教食——多様なゲストのニーズに<br>KMSはきめ細かく対応します。</p>
+</div>
+
+<!-- 対応カテゴリ -->
+<section style="background: var(--beige);">
+  <div class="container">
+    <p class="section-label">Categories</p>
+    <h2>対応できること</h2>
+    <p class="lead">お客様からのご要望をもとに、事前打ち合わせで対応内容を確定します。<br>急な変更にも可能な範囲で柔軟に対応します。</p>
+    <div class="custom-grid">
+
+      <div class="custom-card">
+        <div class="card-header">
+          <span class="icon">🌾</span>
+          <h3>アレルギー対応</h3>
+        </div>
+        <div class="card-body">
+          <p>食物アレルギーをお持ちのゲストに対し、製造段階から分別管理した安全な食事を提供します。</p>
+          <ul>
+            <li>特定原材料8品目対応</li>
+            <li>特定原材料に準ずる20品目対応</li>
+            <li>アレルギー表示ラベル付き提供</li>
+            <li>専用ラインでの調理（要相談）</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="custom-card">
+        <div class="card-header">
+          <span class="icon">🥄</span>
+          <h3>食形態・嚥下対応</h3>
+        </div>
+        <div class="card-body">
+          <p>咀嚼・嚥下に配慮が必要なゲストに向けた食形態変更に対応します。</p>
+          <ul>
+            <li>きざみ食</li>
+            <li>ムース食・ゼリー食</li>
+            <li>とろみ調整（市販品使用）</li>
+            <li>軟菜食・やわらか食</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="custom-card">
+        <div class="card-header">
+          <span class="icon">⚖️</span>
+          <h3>栄養・カロリー管理</h3>
+        </div>
+        <div class="card-body">
+          <p>医師・栄養士の指示書に基づいた栄養管理食の提供が可能です。</p>
+          <ul>
+            <li>カロリー指定（±50kcal対応）</li>
+            <li>塩分制限食</li>
+            <li>たんぱく制限食</li>
+            <li>糖尿病食・腎臓病食（要相談）</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="custom-card">
+        <div class="card-header">
+          <span class="icon">🙏</span>
+          <h3>宗教・思想対応</h3>
+        </div>
+        <div class="card-body">
+          <p>宗教的制約や思想に基づく食事制限にも、可能な範囲で対応します。</p>
+          <ul>
+            <li>ベジタリアン対応</li>
+            <li>ヴィーガン対応（要相談）</li>
+            <li>ハラール対応（要相談）</li>
+            <li>宗教食の代替メニュー提案</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="custom-card">
+        <div class="card-header">
+          <span class="icon">🎉</span>
+          <h3>行事食・特別食</h3>
+        </div>
+        <div class="card-body">
+          <p>季節の行事や誕生日など、特別な日のメニューを演出します。</p>
+          <ul>
+            <li>誕生日ケーキ・デザート追加</li>
+            <li>正月・節分・ひな祭りなどの行事食</li>
+            <li>地域の郷土料理</li>
+            <li>記念日コース（要相談）</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="custom-card">
+        <div class="card-header">
+          <span class="icon">🔄</span>
+          <h3>急な変更への対応</h3>
+        </div>
+        <div class="card-body">
+          <p>体調不良や急な入院・退院など、予期せぬ変更にも柔軟に対応します。</p>
+          <ul>
+            <li>前日までのメニュー変更対応</li>
+            <li>食数の急増・急減への対応</li>
+            <li>食形態の緊急変更（要相談）</li>
+            <li>担当栄養士への直通連絡</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 対応事例 -->
+<section class="example-section">
+  <div class="container">
+    <p class="section-label">Case Examples</p>
+    <h2>対応事例</h2>
+    <p class="lead">実際にKMSが対応してきた事例の一部をご紹介します。</p>
+    <div class="example-grid">
+      <div class="example-card">
+        <div class="situation">ホテルゲストからの急なリクエスト</div>
+        <h3>「魚が苦手で、素麺おろしハンバーグに変えてほしい」</h3>
+        <div class="arrow">↓</div>
+        <div class="solution">当日の朝に連絡を受け、代替メニューの素麺おろしハンバーグに変更。ゲストに喜んでいただけました。</div>
+      </div>
+      <div class="example-card">
+        <div class="situation">介護施設入居者の体調変化</div>
+        <h3>「体調不良で、急きょ食形態をムース食に変更してほしい」</h3>
+        <div class="arrow">↓</div>
+        <div class="solution">施設の担当者からの連絡を受け、翌日分からムース食に切り替え。嚥下評価に合わせた段階的な対応も可能です。</div>
+      </div>
+      <div class="example-card">
+        <div class="situation">外国人ゲストからの要望</div>
+        <h3>「ハラール認証食でなくてもいい。豚肉とアルコールを使わない食事にしてほしい」</h3>
+        <div class="arrow">↓</div>
+        <div class="solution">豚肉・アルコール不使用のメニューを事前に準備。完全なハラール認証には対応できませんでしたが、代替で満足いただけました。</div>
+      </div>
+      <div class="example-card">
+        <div class="situation">特定アレルギーへの対応</div>
+        <h3>「卵・乳製品アレルギーがある子どもがいる。安心して食べられる食事を」</h3>
+        <div class="arrow">↓</div>
+        <div class="solution">卵・乳製品を使わない専用メニューを製造段階から分別調理。アレルギー表示ラベルを付けて提供しました。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- アレルギー対応品目 -->
+<section class="allergy-section">
+  <div class="container">
+    <p class="section-label">Allergy</p>
+    <h2>アレルギー対応品目</h2>
+    <p class="lead">食品表示法で定められた特定原材料8品目（表示義務）と、特定原材料に準ずる20品目に対応しています。</p>
+    <div style="font-family: sans-serif; font-size: 13px; color: var(--brown); margin-bottom: 12px; font-weight: bold;">● 特定原材料8品目（表示義務・重篤な症状のリスクあり）</div>
+    <div class="allergy-grid">
+      <div class="allergy-tag major">えび</div>
+      <div class="allergy-tag major">かに</div>
+      <div class="allergy-tag major">小麦</div>
+      <div class="allergy-tag major">そば</div>
+      <div class="allergy-tag major">卵</div>
+      <div class="allergy-tag major">乳</div>
+      <div class="allergy-tag major">落花生（ピーナッツ）</div>
+      <div class="allergy-tag major">くるみ</div>
+    </div>
+    <div style="font-family: sans-serif; font-size: 13px; color: var(--brown); margin: 24px 0 12px; font-weight: bold;">● 特定原材料に準ずる20品目（表示推奨）</div>
+    <div class="allergy-grid">
+      <div class="allergy-tag">アーモンド</div>
+      <div class="allergy-tag">あわび</div>
+      <div class="allergy-tag">いか</div>
+      <div class="allergy-tag">いくら</div>
+      <div class="allergy-tag">オレンジ</div>
+      <div class="allergy-tag">カシューナッツ</div>
+      <div class="allergy-tag">キウイフルーツ</div>
+      <div class="allergy-tag">牛肉</div>
+      <div class="allergy-tag">ごま</div>
+      <div class="allergy-tag">さけ</div>
+      <div class="allergy-tag">さば</div>
+      <div class="allergy-tag">大豆</div>
+      <div class="allergy-tag">鶏肉</div>
+      <div class="allergy-tag">バナナ</div>
+      <div class="allergy-tag">豚肉</div>
+      <div class="allergy-tag">まつたけ</div>
+      <div class="allergy-tag">もも</div>
+      <div class="allergy-tag">やまいも</div>
+      <div class="allergy-tag">りんご</div>
+      <div class="allergy-tag">ゼラチン</div>
+    </div>
+    <p style="font-size: 13px; color: #888; font-family: sans-serif; margin-top: 20px;">※ 製造工場での完全な除去はできない場合があります。重篤なアレルギーをお持ちの場合は事前に詳しくご相談ください。</p>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>個別対応のご相談</h2>
+  <p>「こんな対応できる？」という相談もお気軽にどうぞ。<br>まずはご要望をお聞かせください。</p>
+  <div class="cta-buttons">
+    <a href="contact.html" class="btn-primary">お問い合わせはこちら</a>
+  </div>
+  <div class="tel">0895-49-5085<span>受付時間：平日 9:00〜17:00</span></div>
+</section>
+
+<footer>
+  <div><strong style="color: var(--gold);">有限会社 近藤ミールサービス</strong><br>〒798-3301 愛媛県宇和島市津島町岩松1269-1</div>
+  <div>
+    <a href="index.html">ホーム</a>
+    <a href="company.html">会社情報</a>
+    <a href="contact.html">お問い合わせ</a>
+  </div>
+  <div style="color: #5a4a3a;">© 2024 Kondo Meal Service. All rights reserved.</div>
+</footer>
+
+</body>
+</html>
