@@ -3,7 +3,93 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="創業1967年の給食・フードサービス会社。ホテル・高齢者施設・学校・自衛隊向けにクックチルシステムと4拠点のセントラルキッチンで365日安定供給。人手不足・コスト削減・品質安定をまるごと解決します。愛媛・香川・大分対応。">
   <title>近藤ミールサービス | 給食・フードサービスのプロフェッショナル</title>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://satoshi291-max.github.io/kondo-meal-hp/#organization",
+        "name": "近藤ミールサービス（KMS）",
+        "legalName": "有限会社 近藤会館",
+        "url": "https://satoshi291-max.github.io/kondo-meal-hp/",
+        "foundingDate": "1967",
+        "numberOfEmployees": {"@type": "QuantitativeValue", "value": 180},
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "津島町岩松1269-1",
+          "addressLocality": "宇和島市",
+          "addressRegion": "愛媛県",
+          "postalCode": "798-3301",
+          "addressCountry": "JP"
+        },
+        "telephone": "+81-895-49-5085",
+        "description": "創業1967年。ホテル・高齢者施設・学校・自衛隊向けの給食・フードサービスを提供。クックチルシステムと4拠点のセントラルキッチンで、人手不足・コスト・品質の課題をまるごと解決します。",
+        "areaServed": [
+          {"@type": "State", "name": "愛媛県"},
+          {"@type": "State", "name": "香川県"},
+          {"@type": "State", "name": "大分県"}
+        ],
+        "knowsAbout": ["給食サービス", "クックチルシステム", "ホテル向け食事サービス", "介護施設給食", "学校給食", "嚥下食", "大量調理", "フードサービス"]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "ホテルの食事を外部委託できますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "はい、対応しています。KMS近藤ミールサービスでは、ホテルの朝食ビュッフェ・宴会・パーティー料理・レストラン運営代行に対応しています。クックチルシステムにより少人数スタッフでも高品質な食事を安定提供できます。お気軽にご相談ください（TEL: 0895-49-5085）。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "クックチルシステムとは何ですか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "クックチルとは、加熱調理した食品を90分以内に3℃以下まで急速冷却し、衛生的に保管・配送する食品製造技術です。KMSではこの技術により、少ない調理スタッフでも大量の食事を安定した品質で提供することができます。食材廃棄ロスの削減や衛生管理の徹底にも効果があります。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "人手不足でも給食・食事サービスを安定して提供できますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "はい、可能です。KMSのクックチルシステムとセントラルキッチン（宇和島・松山・丸亀・別府の4拠点）を活用することで、現地の調理スタッフを最小限に抑えながら365日・3食の安定した食事提供を実現します。ホテル・介護施設・学校・自衛隊など幅広い現場での実績があります。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "介護施設向けの嚥下食・形態別食事に対応していますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "はい、対応しています。常食・軟食・ミキサー食・ゼリー食など、入居者の噛む力・飲み込む力に合わせた形態別食事を提供します。管理栄養士による栄養管理・疾患別制限食（減塩・糖尿病食等）・アレルギー対応食にも対応しています。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "対応エリアはどこですか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "自社配送エリアは愛媛県全域・香川県（中讃・西讃）・大分県（中部・北部・玖珠町）です。全国への宅配配送にも対応しています。拠点は宇和島（本社）・松山・丸亀・別府の4か所にセントラルキッチンを構えています。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "食材費のコスト削減はできますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "はい、可能です。KMSのセントラルキッチンによる大量調理のスケールメリットと、長年培った食材調達力により、品質を維持しながらコストを最適化します。食材廃棄ロスの低減にも取り組んでいます。"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <script>
     if (window.netlifyIdentity) {
@@ -463,6 +549,16 @@
       footer a { margin-left: 12px; }
     }
 
+    /* ── FAQ ── */
+    .faq-section { background: var(--white); }
+    .faq-list { margin-top: 48px; border-top: 1px solid var(--gold-light); }
+    .faq-item { border-bottom: 1px solid var(--gold-light); }
+    .faq-item summary { padding: 20px 0; cursor: pointer; font-size: 16px; color: var(--brown-dark); list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: "+"; color: var(--gold); font-size: 24px; font-weight: 300; flex-shrink: 0; }
+    .faq-item[open] summary::after { content: "–"; }
+    .faq-item p { padding: 0 0 20px; font-size: 15px; color: #555; line-height: 1.9; }
+
     @media (max-width: 480px) {
       .hero-text h1 { font-size: 22px; }
       .result-cards { grid-template-columns: 1fr; }
@@ -702,6 +798,41 @@
         <h3>自衛隊</h3>
         <p>大量調理・365日安定供給の実績</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="container">
+    <p class="section-label">FAQ</p>
+    <h2>よくあるご質問</h2>
+    <p class="lead">食事サービスの外部委託・クックチルシステムについてよくいただくご質問をまとめました。</p>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>ホテルの食事を外部委託できますか？</summary>
+        <p>はい、対応しています。朝食ビュッフェ・宴会・レストラン運営代行まで、ホテルの食事をトータルサポートします。クックチルシステムにより少人数スタッフでも高品質な食事を安定提供できます。</p>
+      </details>
+      <details class="faq-item">
+        <summary>クックチルシステムとは何ですか？</summary>
+        <p>加熱調理した食品を90分以内に3℃以下まで急速冷却し、衛生的に保管・配送する技術です。現地の調理スタッフを最小限に抑えながら、品質・衛生・コストを同時に改善できます。</p>
+      </details>
+      <details class="faq-item">
+        <summary>人手不足でも給食を安定して提供できますか？</summary>
+        <p>はい、可能です。KMSのクックチル技術と4拠点のセントラルキッチン（宇和島・松山・丸亀・別府）により、現地スタッフを最小限に抑えながら365日・3食の安定供給を実現します。</p>
+      </details>
+      <details class="faq-item">
+        <summary>介護施設向けの嚥下食・形態別食事に対応していますか？</summary>
+        <p>はい、対応しています。常食・軟食・ミキサー食・ゼリー食など、入居者の状態に合わせた形態別食事を提供します。管理栄養士による栄養管理・制限食・アレルギー対応食にも対応しています。</p>
+      </details>
+      <details class="faq-item">
+        <summary>対応エリアはどこですか？</summary>
+        <p>自社配送エリアは愛媛県全域・香川県（中讃・西讃）・大分県（中部・北部・玖珠町）です。全国への宅配配送にも対応しています。</p>
+      </details>
+      <details class="faq-item">
+        <summary>食材費のコスト削減はできますか？</summary>
+        <p>はい、可能です。セントラルキッチンによる大量調理のスケールメリットと長年の食材調達力により、品質を落とさずコストを最適化します。食材廃棄ロスの低減にも取り組んでいます。</p>
+      </details>
     </div>
   </div>
 </section>

@@ -209,6 +209,16 @@ footer a { color: var(--gold-light); text-decoration: none; margin-left: 20px; }
 .industry-card p { font-size: 14px; color: #666; line-height: 1.8; margin-bottom: 20px; }
 .industry-link { color: var(--gold); font-size: 14px; font-family: sans-serif; }
 
+/* ── FAQ ── */
+.faq-section { background: var(--white); }
+.faq-list { margin-top: 48px; border-top: 1px solid var(--gold-light); }
+.faq-item { border-bottom: 1px solid var(--gold-light); }
+.faq-item summary { padding: 20px 0; cursor: pointer; font-size: 16px; color: var(--brown-dark); list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: "+"; color: var(--gold); font-size: 24px; font-weight: 300; flex-shrink: 0; }
+.faq-item[open] summary::after { content: "–"; }
+.faq-item p { padding: 0 0 20px; font-size: 15px; color: #555; line-height: 1.9; }
+
 /* ── レスポンシブ ── */
 @media (max-width: 768px) {
   header { padding: 0 20px; height: 60px; }
