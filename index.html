@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>近藤ミールサービス | ホテルの食事、まるごとお任せください</title>
+  <title>近藤ミールサービス | 給食・フードサービスのプロフェッショナル</title>
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <script>
     if (window.netlifyIdentity) {
@@ -63,6 +63,27 @@
       font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
     }
     nav a:hover { color: var(--gold); }
+
+    /* ── ドロップダウン ── */
+    .nav-dropdown { position: relative; display: inline-block; margin-left: 28px; }
+    .nav-dropdown-toggle { color: var(--gold-light); text-decoration: none; font-size: 14px; font-family: 'Hiragino Kaku Gothic ProN', sans-serif; cursor: pointer; }
+    .nav-dropdown-toggle::after { content: " ▾"; font-size: 10px; }
+    .nav-dropdown:hover .nav-dropdown-toggle { color: var(--gold); }
+    .dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: var(--brown-dark); border: 1px solid rgba(201,168,76,0.3); min-width: 160px; z-index: 200; padding: 8px 0; }
+    .nav-dropdown:hover .dropdown-menu { display: block; }
+    .dropdown-menu a { display: block; color: var(--gold-light); text-decoration: none; padding: 10px 20px; font-size: 13px; font-family: 'Hiragino Kaku Gothic ProN', sans-serif; margin-left: 0; border-bottom: 1px solid rgba(201,168,76,0.1); }
+    .dropdown-menu a:hover { color: var(--gold); background: rgba(255,255,255,0.05); }
+    .dropdown-menu a:last-child { border-bottom: none; }
+
+    /* ── 業種カード ── */
+    .industry-section { background: var(--beige); }
+    .industry-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 48px; }
+    .industry-card { background: var(--white); border: 1px solid var(--gold-light); padding: 40px 32px; text-decoration: none; display: block; transition: border-color 0.2s, box-shadow 0.2s; }
+    .industry-card:hover { border-color: var(--gold); box-shadow: 0 4px 16px rgba(62,35,18,0.08); }
+    .industry-icon { font-size: 40px; margin-bottom: 16px; }
+    .industry-card h3 { font-size: 22px; color: var(--brown-dark); margin-bottom: 12px; }
+    .industry-card p { font-size: 14px; color: #666; line-height: 1.8; margin-bottom: 20px; }
+    .industry-link { color: var(--gold); font-size: 14px; font-family: sans-serif; }
     .hamburger {
       display: none;
       flex-direction: column;
@@ -432,6 +453,7 @@
       .number-item .num { font-size: 40px; }
 
       .result-cards { grid-template-columns: 1fr 1fr; gap: 16px; }
+      .industry-cards { grid-template-columns: 1fr; }
 
       .cta-section h2 { font-size: 26px; }
       .cta-buttons { flex-direction: column; align-items: center; }
@@ -457,7 +479,15 @@
     <span>近藤ミールサービス</span>
   </div>
   <nav>
-    <a href="hotel.html">ホテル向けサービス</a>
+    <div class="nav-dropdown">
+      <a href="#" class="nav-dropdown-toggle">業種から探す</a>
+      <div class="dropdown-menu">
+        <a href="hotel.html">ホテル・旅館</a>
+        <a href="elderly.html">高齢者施設</a>
+        <a href="school.html">学校・教育機関</a>
+        <a href="jieitai.html">自衛隊</a>
+      </div>
+    </div>
     <a href="cookchil.html">クックチルシステム</a>
     <a href="custom.html">個別対応</a>
     <a href="company.html">会社情報</a>
@@ -468,7 +498,10 @@
   </div>
 </header>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="hotel.html">ホテル向けサービス</a>
+  <a href="hotel.html">ホテル・旅館</a>
+  <a href="elderly.html">高齢者施設</a>
+  <a href="school.html">学校・教育機関</a>
+  <a href="jieitai.html">自衛隊</a>
   <a href="cookchil.html">クックチルシステム</a>
   <a href="custom.html">個別対応</a>
   <a href="company.html">会社情報</a>
@@ -502,33 +535,44 @@
   </script>
   <div class="hero-overlay">
     <div class="hero-text">
-      <h1>ホテルの食事を、<br><span>もっと上質に。</span><br>もっとシンプルに。</h1>
-      <p>クックチルシステムと専任シェフチームで、<br>ホテルの食事課題をまるごと解決します。</p>
-      <a href="hotel.html" class="btn-primary">ホテル向けサービスを見る</a>
+      <h1>人手が足りない。コストが上がる。<br><span>それでも、食事は止められない。</span></h1>
+      <p>ホテル・高齢者施設・学校・自衛隊。<br>あらゆる食事現場のパートナーとして。</p>
+      <a href="contact.html" class="btn-primary">無料相談はこちら</a>
     </div>
   </div>
 </div>
 
-<!-- ホテル向け実績 -->
-<section class="hotel-section">
+<!-- 業種別サービス -->
+<section class="industry-section">
   <div class="container">
-    <div class="hotel-grid">
-      <div class="hotel-img-block">
-        <img src="images/hotel/wedding_food.jpg" alt="結婚式料理" style="grid-row:span 2; width:100%; height:100%; min-height:160px; object-fit:cover; border-radius:4px;">
-        <img src="images/hotel/buffet_02.jpg" alt="ビュッフェ" style="width:100%; min-height:160px; object-fit:cover; border-radius:4px;">
-        <img src="images/hotel/kaiseki.jpg" alt="会席料理" style="width:100%; min-height:160px; object-fit:cover; border-radius:4px;">
-      </div>
-      <div class="hotel-text">
-        <p class="section-label">Hotel Service</p>
-        <h3>ホテルの食事課題、<br>KMSが解決します</h3>
-        <p>人手不足・コスト高騰・品質のばらつき——ホテルの食事部門が抱える課題は複雑です。KMSは創業1967年から培った給食のノウハウとクックチル技術で、ホテルの食事をトータルサポートします。</p>
-        <p>朝食ビュッフェから宴会料理まで。少ない人員でも安定した品質を実現します。</p>
-        <div class="tag-list">
-          <span class="tag">朝食ビュッフェ</span>
-          <span class="tag">宴会・パーティー</span>
-          <span class="tag">レストラン運営代行</span>
-        </div>
-      </div>
+    <p class="section-label">Industries</p>
+    <h2>食事現場、すべてに対応</h2>
+    <p class="lead">ホテルから介護施設、学校、自衛隊まで。KMSはさまざまな食事現場でのノウハウを活かし、それぞれの課題に最適な解決策を提供します。</p>
+    <div class="industry-cards">
+      <a href="hotel.html" class="industry-card">
+        <div class="industry-icon">🏨</div>
+        <h3>ホテル・旅館</h3>
+        <p>朝食ビュッフェ・宴会・レストラン運営代行。人手不足とコスト課題を一気に解決します。</p>
+        <span class="industry-link">サービスを見る →</span>
+      </a>
+      <a href="elderly.html" class="industry-card">
+        <div class="industry-icon">🏥</div>
+        <h3>高齢者・介護施設</h3>
+        <p>嚥下食・栄養管理・施設給食代行。入居者一人ひとりに寄り添った食事を提供します。</p>
+        <span class="industry-link">サービスを見る →</span>
+      </a>
+      <a href="school.html" class="industry-card">
+        <div class="industry-icon">🎓</div>
+        <h3>学校・教育機関</h3>
+        <p>栄養バランス・アレルギー対応・衛生管理。子どもたちの食を安全に支えます。</p>
+        <span class="industry-link">サービスを見る →</span>
+      </a>
+      <a href="jieitai.html" class="industry-card">
+        <div class="industry-icon">🪖</div>
+        <h3>自衛隊</h3>
+        <p>大量調理・365日安定供給・厳格な衛生管理。使命を果たす現場を食で支えます。</p>
+        <span class="industry-link">サービスを見る →</span>
+      </a>
     </div>
   </div>
 </section>
@@ -553,7 +597,7 @@
       <div class="strength-card">
         <div class="num">03</div>
         <h3>徹底した個別対応</h3>
-        <p>ハラール対応・宴会特別メニュー・朝食ビュッフェのカスタマイズなど、ホテルの多様なゲストニーズにきめ細かく対応します。</p>
+        <p>ハラール対応・嚥下食・アレルギー除去食など、それぞれの現場の多様なニーズにきめ細かく対応します。</p>
       </div>
     </div>
   </div>
@@ -604,29 +648,6 @@
   </div>
 </section>
 
-<!-- 個別対応 -->
-<section class="custom-section">
-  <div class="container">
-    <p class="section-label">Customization</p>
-    <h2>ホテルゲストの<br>多様なニーズに対応</h2>
-    <div class="custom-grid">
-      <div>
-        <p style="line-height:1.9; color:#555; margin-bottom:24px;">宴会・ハラール・長期滞在など、ホテルには多様なゲストが集まります。KMSは事前の打ち合わせをもとに、個別対応メニューを柔軟に準備します。</p>
-        <ul class="custom-list">
-          <li>ハラール対応（豚肉・アルコール不使用、要相談）</li>
-          <li>宴会・イベント向け特別メニュー</li>
-          <li>朝食ビュッフェのメニューカスタマイズ</li>
-          <li>VIP・長期滞在ゲスト向けメニューローテーション</li>
-        </ul>
-      </div>
-      <div class="custom-img-block">
-        <img src="images/hotel/banquet_01.jpg" alt="宴会・イベント食" style="grid-row:span 2; width:100%; height:100%; min-height:160px; object-fit:cover; border-radius:4px;">
-        <img src="images/hotel/custom_halal.jpg" alt="ハラール対応" style="width:100%; min-height:160px; object-fit:cover; border-radius:4px;">
-        <img src="images/hotel/buffet_01.jpg" alt="朝食ビュッフェ" style="width:100%; min-height:160px; object-fit:cover; border-radius:4px;">
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- 数字で見る実績 -->
 <section class="numbers-section">
@@ -691,7 +712,7 @@
   <p>「コスト削減したい」「人手が足りない」「品質を安定させたい」——<br>どんなお悩みもお気軽にお聞かせください。</p>
   <div class="cta-buttons">
     <a href="contact.html" class="btn-primary">お問い合わせフォーム</a>
-    <a href="hotel.html" class="btn-secondary">サービス詳細を見る</a>
+    <a href="#" onclick="document.querySelector('.industry-section').scrollIntoView({behavior:'smooth'}); return false;" class="btn-secondary">業種別サービスを見る</a>
   </div>
   <div class="tel">
     0895-49-5085

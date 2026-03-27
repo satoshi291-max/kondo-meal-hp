@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>学校・教育機関向けサービス | 近藤ミールサービス</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .service-cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      margin-top: 48px;
+    }
+    .service-card { border: 1px solid var(--gold-light); overflow: hidden; }
+    .service-card .card-body { padding: 28px; }
+    .service-card h3 { font-size: 22px; color: var(--brown); margin-bottom: 12px; }
+    .service-card p { font-size: 14px; color: #666; line-height: 1.8; margin-bottom: 16px; }
+    .service-card ul { padding-left: 0; list-style: none; }
+    .service-card ul li { font-size: 14px; color: #555; padding: 6px 0; border-bottom: 1px solid var(--beige-dark); }
+    .service-card ul li::before { content: "– "; color: var(--gold); }
+    .card-icon-block { height: 180px; display: flex; align-items: center; justify-content: center; font-size: 64px; }
+
+    .merit-section { background: var(--brown-dark); }
+    .merit-section h2 { color: var(--gold); }
+    .merit-section .lead { color: var(--gold-light); }
+    .merit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+    .merit-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(201,168,76,0.3); padding: 32px 24px; text-align: center; }
+    .merit-card .icon { font-size: 40px; margin-bottom: 16px; }
+    .merit-card h3 { color: var(--gold); font-size: 18px; margin-bottom: 12px; }
+    .merit-card p { color: var(--gold-light); font-size: 14px; line-height: 1.8; }
+
+    @media (max-width: 768px) {
+      .service-cards { grid-template-columns: 1fr; }
+      .merit-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">KMS <span>近藤ミールサービス</span></a>
+  <nav>
+    <div class="nav-dropdown">
+      <a href="#" class="nav-dropdown-toggle active">業種から探す</a>
+      <div class="dropdown-menu">
+        <a href="hotel.html">ホテル・旅館</a>
+        <a href="elderly.html">高齢者施設</a>
+        <a href="school.html">学校・教育機関</a>
+        <a href="jieitai.html">自衛隊</a>
+      </div>
+    </div>
+    <a href="cookchil.html">クックチルシステム</a>
+    <a href="custom.html">個別対応</a>
+    <a href="company.html">会社情報</a>
+    <a href="contact.html">お問い合わせ</a>
+  </nav>
+  <div class="hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="hotel.html">ホテル・旅館</a>
+  <a href="elderly.html">高齢者施設</a>
+  <a href="school.html">学校・教育機関</a>
+  <a href="jieitai.html">自衛隊</a>
+  <a href="cookchil.html">クックチルシステム</a>
+  <a href="custom.html">個別対応</a>
+  <a href="company.html">会社情報</a>
+  <a href="contact.html">お問い合わせ</a>
+</div>
+
+<div class="page-hero">
+  <p class="section-label">School &amp; Education</p>
+  <h1>学校・教育機関向けサービス</h1>
+  <p>子どもたちの健康と成長を、食から支えます。<br>栄養管理・アレルギー対応・衛生管理を徹底します。</p>
+</div>
+
+<!-- サービス一覧 -->
+<section style="background: var(--white);">
+  <div class="container">
+    <p class="section-label">Services</p>
+    <h2>提供サービス一覧</h2>
+    <p class="lead">学校の規模・給食スタイルに合わせて、必要なサービスを組み合わせてご利用いただけます。</p>
+    <div class="service-cards">
+
+      <div class="service-card">
+        <div class="card-icon-block" style="background: linear-gradient(135deg, #f0e8d6, #d4c4a0);">🍱</div>
+        <div class="card-body">
+          <h3>学校給食の提供・運営</h3>
+          <p>栄養バランスの取れた献立設計から調理・配送まで、学校給食をトータルサポートします。</p>
+          <ul>
+            <li>給食摂取基準に準拠した献立</li>
+            <li>季節の食材を活かしたメニュー</li>
+            <li>地産地消対応</li>
+            <li>食育プログラム連携</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="card-icon-block" style="background: linear-gradient(135deg, #e8f0d6, #b8d4a0);">🌿</div>
+        <div class="card-body">
+          <h3>アレルギー対応食</h3>
+          <p>食物アレルギーを持つ子どもも安心して給食を楽しめるよう、除去食・代替食を提供します。</p>
+          <ul>
+            <li>7大アレルゲン対応</li>
+            <li>個別対応食の提供</li>
+            <li>アレルギー管理システム</li>
+            <li>保護者・養護教諭との連携</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="card-icon-block" style="background: linear-gradient(135deg, #d6e8f0, #a0c4d4);">🔬</div>
+        <div class="card-body">
+          <h3>衛生管理・HACCP対応</h3>
+          <p>子どもたちの食の安全を最優先に。徹底した衛生管理体制で安心の給食を提供します。</p>
+          <ul>
+            <li>HACCPに基づく衛生管理</li>
+            <li>異物混入防止対策</li>
+            <li>温度管理の徹底</li>
+            <li>緊急時対応マニュアル整備</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="card-icon-block" style="background: linear-gradient(135deg, #f0d6e8, #d4a0c4);">🍎</div>
+        <div class="card-body">
+          <h3>食育支援・行事食</h3>
+          <p>給食を通じて食の大切さを伝えます。季節行事・郷土料理など、食育につながる給食を提案します。</p>
+          <ul>
+            <li>年間行事食カレンダーの提案</li>
+            <li>郷土料理・地域食材の活用</li>
+            <li>栄養教諭との献立連携</li>
+            <li>食育だより・給食だよりの作成支援</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 導入メリット -->
+<section class="merit-section">
+  <div class="container">
+    <p class="section-label">Merit</p>
+    <h2>KMSに任せるメリット</h2>
+    <p class="lead">子どもの健康・教職員の負担・安全管理——学校給食の課題を一気に解決します。</p>
+    <div class="merit-grid">
+      <div class="merit-card">
+        <div class="icon">🌱</div>
+        <h3>子どもの健康・成長を支える</h3>
+        <p>栄養バランスの取れた給食で、子どもたちの健やかな成長をサポートします。食育との連携で食の大切さも伝えます。</p>
+      </div>
+      <div class="merit-card">
+        <div class="icon">👩‍🏫</div>
+        <h3>教職員・栄養士の負担軽減</h3>
+        <p>献立作成・調理・衛生管理をKMSが担うことで、教職員が本来の教育活動に集中できる環境を作ります。</p>
+      </div>
+      <div class="merit-card">
+        <div class="icon">🛡️</div>
+        <h3>安全・安心な食の環境</h3>
+        <p>HACCP対応の徹底した衛生管理と、アレルギー対応食の確実な提供により、保護者も安心できる給食を実現します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>学校給食、まるごとお任せください</h2>
+  <p>学校の規模・スタイル・予算に合わせた最適プランをご提案します。<br>ヒアリングから見積もりまで無料です。</p>
+  <div class="cta-buttons">
+    <a href="contact.html" class="btn-primary">お問い合わせはこちら</a>
+  </div>
+  <div class="tel">0895-49-5085<span>受付時間：平日 9:00〜17:00</span></div>
+</section>
+
+<footer>
+  <div><strong style="color: var(--gold);">有限会社　近藤会館</strong><br>〒798-3301 愛媛県宇和島市津島町岩松1269-1</div>
+  <div>
+    <a href="index.html">ホーム</a>
+    <a href="company.html">会社情報</a>
+    <a href="contact.html">お問い合わせ</a>
+  </div>
+  <div style="color: #5a4a3a;">© 2024 Kondo Meal Service. All rights reserved.</div>
+</footer>
+
+</body>
+</html>

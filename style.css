@@ -188,6 +188,27 @@ footer a { color: var(--gold-light); text-decoration: none; margin-left: 20px; }
 .img-wrap .fallback::before { content: "📷"; font-size: 28px; display: block; margin-bottom: 8px; }
 .img-wrap img.loaded + .fallback { display: none; }
 
+/* ── ドロップダウン ── */
+.nav-dropdown { position: relative; display: inline-block; margin-left: 28px; }
+.nav-dropdown-toggle { color: var(--gold-light); text-decoration: none; font-size: 14px; font-family: 'Hiragino Kaku Gothic ProN', sans-serif; cursor: pointer; }
+.nav-dropdown-toggle::after { content: " ▾"; font-size: 10px; }
+.nav-dropdown:hover .nav-dropdown-toggle { color: var(--gold); }
+.dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: var(--brown-dark); border: 1px solid rgba(201,168,76,0.3); min-width: 160px; z-index: 200; padding: 8px 0; }
+.nav-dropdown:hover .dropdown-menu { display: block; }
+.dropdown-menu a { display: block; color: var(--gold-light); text-decoration: none; padding: 10px 20px; font-size: 13px; font-family: 'Hiragino Kaku Gothic ProN', sans-serif; margin-left: 0; border-bottom: 1px solid rgba(201,168,76,0.1); }
+.dropdown-menu a:hover { color: var(--gold); background: rgba(255,255,255,0.05); }
+.dropdown-menu a:last-child { border-bottom: none; }
+
+/* ── 業種カード ── */
+.industry-section { background: var(--beige); }
+.industry-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 48px; }
+.industry-card { background: var(--white); border: 1px solid var(--gold-light); padding: 40px 32px; text-decoration: none; display: block; transition: border-color 0.2s, box-shadow 0.2s; }
+.industry-card:hover { border-color: var(--gold); box-shadow: 0 4px 16px rgba(62,35,18,0.08); }
+.industry-icon { font-size: 40px; margin-bottom: 16px; }
+.industry-card h3 { font-size: 22px; color: var(--brown-dark); margin-bottom: 12px; }
+.industry-card p { font-size: 14px; color: #666; line-height: 1.8; margin-bottom: 20px; }
+.industry-link { color: var(--gold); font-size: 14px; font-family: sans-serif; }
+
 /* ── レスポンシブ ── */
 @media (max-width: 768px) {
   header { padding: 0 20px; height: 60px; }
@@ -202,6 +223,7 @@ footer a { color: var(--gold-light); text-decoration: none; margin-left: 20px; }
   h2 { font-size: 24px; }
   .lead { font-size: 14px; margin-bottom: 32px; }
 
+  .industry-cards { grid-template-columns: 1fr; }
   .cta-section h2 { font-size: 26px; }
   .cta-buttons { flex-direction: column; align-items: center; }
   .tel { font-size: 26px; }
