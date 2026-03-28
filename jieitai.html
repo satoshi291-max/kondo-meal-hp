@@ -49,7 +49,10 @@
     .service-card ul { padding-left: 0; list-style: none; }
     .service-card ul li { font-size: 14px; color: #555; padding: 6px 0; border-bottom: 1px solid var(--beige-dark); }
     .service-card ul li::before { content: "– "; color: var(--gold); }
-    .card-icon-block { height: 180px; display: flex; align-items: center; justify-content: center; font-size: 64px; }
+    .card-icon-block { height: 180px; display: flex; align-items: center; justify-content: center; font-size: 64px; background: var(--brown-dark); }
+    .card-stat { text-align: center; }
+    .card-stat .stat-num { font-size: 52px; font-weight: bold; color: var(--gold); line-height: 1; font-family: Georgia, serif; letter-spacing: 2px; }
+    .card-stat .stat-sub { font-size: 13px; color: var(--gold-light); margin-top: 8px; letter-spacing: 1px; }
 
     .merit-section { background: var(--brown-dark); }
     .merit-section h2 { color: var(--gold); }
@@ -115,7 +118,7 @@
     <div class="service-cards">
 
       <div class="service-card">
-        <img src="images/cookchil/cooking_02.jpg" alt="大量調理・365日安定供給" class="card-img" style="height:220px; object-fit:cover; display:block;">
+        <div class="card-icon-block"><div class="card-stat"><div class="stat-num">365日</div><div class="stat-sub">3食 確実に届ける</div></div></div>
         <div class="card-body">
           <h3>大量調理・365日安定供給</h3>
           <p>セントラルキッチンの大量調理能力で、隊員全員に品質の安定した食事を365日・3食提供します。</p>
@@ -129,7 +132,7 @@
       </div>
 
       <div class="service-card">
-        <img src="images/cookchil/cooking_01.jpg" alt="厳格な衛生管理" class="card-img" style="height:220px; object-fit:cover; display:block;">
+        <div class="card-icon-block"><div class="card-stat"><div class="stat-num">HACCP</div><div class="stat-sub">準拠 食中毒ゼロへ</div></div></div>
         <div class="card-body">
           <h3>厳格な衛生管理</h3>
           <p>食中毒ゼロを徹底。自衛隊の任務遂行能力を食の面から確実に守ります。</p>
@@ -143,7 +146,7 @@
       </div>
 
       <div class="service-card">
-        <img src="images/cookchil/cooking.jpg" alt="体力維持・栄養設計" class="card-img" style="height:220px; object-fit:cover; display:block;">
+        <div class="card-icon-block"><div class="card-stat"><div class="stat-num" style="font-size:36px;">管理栄養士</div><div class="stat-sub">監修の献立設計</div></div></div>
         <div class="card-body">
           <h3>体力維持・栄養設計</h3>
           <p>隊員の体力維持・向上を目的とした栄養設計。訓練・任務に応じた献立を提供します。</p>
@@ -157,7 +160,7 @@
       </div>
 
       <div class="service-card">
-        <img src="images/cookchil/serving.jpg" alt="緊急時・特殊任務対応" class="card-img" style="height:220px; object-fit:cover; display:block;">
+        <div class="card-icon-block"><div class="card-stat"><div class="stat-num">24h</div><div class="stat-sub">変則スケジュール対応</div></div></div>
         <div class="card-body">
           <h3>緊急時・特殊任務対応</h3>
           <p>訓練・演習・緊急招集など、変則的なスケジュールにも柔軟に対応します。</p>
