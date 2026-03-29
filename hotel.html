@@ -116,6 +116,13 @@
       .flow-item::after { content: "↓"; right: 50%; top: unset; bottom: -16px; transform: translateX(50%); }
       .merit-grid { grid-template-columns: 1fr; }
     }
+    .faq-section { background: var(--white); }
+    .faq-item { border-bottom: 1px solid var(--gold-light); }
+    .faq-item summary { padding: 20px 0; cursor: pointer; font-size: 16px; color: var(--brown-dark); list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: "+"; color: var(--gold); font-size: 24px; font-weight: 300; flex-shrink: 0; }
+    .faq-item[open] summary::after { content: "–"; }
+    .faq-item p { padding: 0 0 20px; font-size: 15px; color: #555; line-height: 1.9; }
   </style>
 </head>
 <body>
@@ -270,6 +277,61 @@
         <h3>品質が安定する</h3>
         <p>セントラルキッチンでの一括調理とクックチル管理により、担当者が変わっても同じ品質を維持できます。</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "ホテルの朝食ビュッフェを外部委託できますか？",
+      "acceptedAnswer": {"@type": "Answer", "text": "はい、対応しています。KMS近藤ミールサービスでは、ホテルの朝食ビュッフェ・宴会・レストラン運営代行に対応しています。クックチルシステムにより少人数スタッフでも高品質な食事を安定提供できます。"}
+    },
+    {
+      "@type": "Question",
+      "name": "ホテルの料理人・調理スタッフが不足していても対応できますか？",
+      "acceptedAnswer": {"@type": "Answer", "text": "はい、対応できます。KMSのセントラルキッチンで調理した料理をクックチルで配送するため、現地の調理スタッフを最小限に抑えながら品質を維持できます。人手不足のホテルでも安定したフードサービスを実現します。"}
+    },
+    {
+      "@type": "Question",
+      "name": "宴会・パーティーの特別メニューにも対応できますか？",
+      "acceptedAnswer": {"@type": "Answer", "text": "はい、対応しています。ご宴会・披露宴・パーティーなどの特別メニューに対応します。規模・ゲスト層・ご予算に合わせた最適プランをご提案します。"}
+    },
+    {
+      "@type": "Question",
+      "name": "ハラール対応・宗教食への対応は可能ですか？",
+      "acceptedAnswer": {"@type": "Answer", "text": "豚肉・アルコール不使用の対応は要相談で承ります。訪日外国人ゲストへの対応強化を検討されているホテル様はお気軽にご相談ください（TEL: 0895-49-5085）。"}
+    }
+  ]
+}
+</script>
+<section class="faq-section">
+  <div class="container">
+    <p class="section-label">FAQ</p>
+    <h2>よくあるご質問</h2>
+    <p class="lead">ホテル・旅館向け給食サービスについてよくいただくご質問をまとめました。</p>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>ホテルの朝食ビュッフェを外部委託できますか？</summary>
+        <p>はい、対応しています。朝食ビュッフェ・宴会・レストラン運営代行まで、ホテルの食事をトータルサポートします。クックチルシステムにより少人数スタッフでも高品質な食事を安定提供できます。</p>
+      </details>
+      <details class="faq-item">
+        <summary>調理スタッフが不足していても対応できますか？</summary>
+        <p>はい、対応できます。KMSのセントラルキッチンで調理した料理をクックチルで配送するため、現地の調理スタッフを最小限に抑えながら品質を維持できます。</p>
+      </details>
+      <details class="faq-item">
+        <summary>宴会・パーティーの特別メニューにも対応できますか？</summary>
+        <p>はい、対応しています。ご宴会・披露宴・パーティーなどの特別メニューに対応します。規模・ゲスト層・ご予算に合わせた最適プランをご提案します。</p>
+      </details>
+      <details class="faq-item">
+        <summary>ハラール対応・宗教食への対応は可能ですか？</summary>
+        <p>豚肉・アルコール不使用の対応は要相談で承ります。訪日外国人ゲストへの対応強化を検討されているホテル様はお気軽にご相談ください。</p>
+      </details>
     </div>
   </div>
 </section>

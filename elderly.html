@@ -64,6 +64,13 @@
       .service-cards { grid-template-columns: 1fr; }
       .merit-grid { grid-template-columns: 1fr; }
     }
+    .faq-section { background: var(--white); }
+    .faq-item { border-bottom: 1px solid var(--gold-light); }
+    .faq-item summary { padding: 20px 0; cursor: pointer; font-size: 16px; color: var(--brown-dark); list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: "+"; color: var(--gold); font-size: 24px; font-weight: 300; flex-shrink: 0; }
+    .faq-item[open] summary::after { content: "–"; }
+    .faq-item p { padding: 0 0 20px; font-size: 15px; color: #555; line-height: 1.9; }
   </style>
 </head>
 <body>
@@ -212,6 +219,61 @@
         <h3>品質・衛生の安定</h3>
         <p>セントラルキッチンでの一括調理とHACCP対応により、担当者が変わっても同じ品質・安全性を維持します。</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "介護施設の給食を外部委託できますか？",
+      "acceptedAnswer": {"@type": "Answer", "text": "はい、対応しています。KMS近藤ミールサービスでは、食事提供の全工程を代行します。クックチルシステムにより現地スタッフを最小限に抑えながら、365日・3食の安定した給食を提供します。"}
+    },
+    {
+      "@type": "Question",
+      "name": "嚥下食・形態別食事に対応していますか？",
+      "acceptedAnswer": {"@type": "Answer", "text": "はい、対応しています。常食・軟食・ミキサー食・ゼリー食など、入居者の噛む力・飲み込む力に合わせた形態別食事を提供します。医療職・看護師との連携対応も行います。"}
+    },
+    {
+      "@type": "Question",
+      "name": "減塩食・糖尿病食などの制限食に対応していますか？",
+      "acceptedAnswer": {"@type": "Answer", "text": "はい、対応しています。管理栄養士監修のもと、疾患別・制限食（減塩・糖尿病食等）に対応します。アレルギー対応食の提供や栄養報告書の作成・提出も行います。"}
+    },
+    {
+      "@type": "Question",
+      "name": "行事食や誕生日メニューにも対応できますか？",
+      "acceptedAnswer": {"@type": "Answer", "text": "はい、対応しています。年間行事食カレンダーの提案・誕生月特別メニュー・選択メニューの提供（要相談）など、入居者の生活の質を高める食事を提案します。"}
+    }
+  ]
+}
+</script>
+<section class="faq-section">
+  <div class="container">
+    <p class="section-label">FAQ</p>
+    <h2>よくあるご質問</h2>
+    <p class="lead">高齢者・介護施設向け給食サービスについてよくいただくご質問をまとめました。</p>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>介護施設の給食を外部委託できますか？</summary>
+        <p>はい、対応しています。食事提供の全工程を代行します。クックチルシステムにより現地スタッフを最小限に抑えながら、365日・3食の安定した給食を提供します。</p>
+      </details>
+      <details class="faq-item">
+        <summary>嚥下食・形態別食事に対応していますか？</summary>
+        <p>はい、対応しています。常食・軟食・ミキサー食・ゼリー食など、入居者の状態に合わせた形態別食事を提供します。医療職・看護師との連携対応も行います。</p>
+      </details>
+      <details class="faq-item">
+        <summary>減塩食・糖尿病食などの制限食に対応していますか？</summary>
+        <p>はい、対応しています。管理栄養士監修のもと、疾患別・制限食に対応します。アレルギー対応食の提供や栄養報告書の作成・提出も行います。</p>
+      </details>
+      <details class="faq-item">
+        <summary>行事食や誕生日メニューにも対応できますか？</summary>
+        <p>はい、対応しています。年間行事食カレンダーの提案・誕生月特別メニュー・選択メニューの提供（要相談）など、入居者の生活の質を高める食事を提案します。</p>
+      </details>
     </div>
   </div>
 </section>

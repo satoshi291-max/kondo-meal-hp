@@ -67,6 +67,13 @@
       .service-cards { grid-template-columns: 1fr; }
       .merit-grid { grid-template-columns: 1fr; }
     }
+    .faq-section { background: var(--white); }
+    .faq-item { border-bottom: 1px solid var(--gold-light); }
+    .faq-item summary { padding: 20px 0; cursor: pointer; font-size: 16px; color: var(--brown-dark); list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: "+"; color: var(--gold); font-size: 24px; font-weight: 300; flex-shrink: 0; }
+    .faq-item[open] summary::after { content: "–"; }
+    .faq-item p { padding: 0 0 20px; font-size: 15px; color: #555; line-height: 1.9; }
   </style>
 </head>
 <body>
@@ -215,6 +222,61 @@
         <h3>365日の安定供給</h3>
         <p>4拠点のセントラルキッチンと確立されたオペレーション体制で、休日・繁忙期を問わず安定した供給を実現します。</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "自衛隊向けの給食・大量調理に対応できますか？",
+      "acceptedAnswer": {"@type": "Answer", "text": "はい、対応しています。KMS近藤ミールサービスでは、数百名規模の一括調理・365日3食の安定供給に対応します。セントラルキッチン4拠点のバックアップ体制で確実な供給を実現します。"}
+    },
+    {
+      "@type": "Question",
+      "name": "隊員の体力維持に配慮した栄養設計はできますか？",
+      "acceptedAnswer": {"@type": "Answer", "text": "はい、対応しています。管理栄養士監修のもと、体力維持に最適化したカロリー設計・タンパク質・ビタミン重視の献立・訓練強度に応じた食事量調整を行います。"}
+    },
+    {
+      "@type": "Question",
+      "name": "衛生管理・食中毒対策はどうなっていますか？",
+      "acceptedAnswer": {"@type": "Answer", "text": "HACCP準拠の衛生管理を徹底しています。検食・保存食の管理・定期的な衛生検査・記録・食品添加物・アレルゲン管理により、食中毒リスクをゼロに近づけます。"}
+    },
+    {
+      "@type": "Question",
+      "name": "訓練・演習など変則スケジュールにも対応できますか？",
+      "acceptedAnswer": {"@type": "Answer", "text": "はい、対応しています。早朝・深夜対応の食事手配・変則スケジュールへの柔軟対応・食数の急な増減への対応など、緊急時の供給体制を確保しています。"}
+    }
+  ]
+}
+</script>
+<section class="faq-section">
+  <div class="container">
+    <p class="section-label">FAQ</p>
+    <h2>よくあるご質問</h2>
+    <p class="lead">自衛隊向け給食サービスについてよくいただくご質問をまとめました。</p>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>自衛隊向けの大量調理・365日供給に対応できますか？</summary>
+        <p>はい、対応しています。数百名規模の一括調理・365日3食の安定供給に対応します。セントラルキッチン4拠点のバックアップ体制で確実な供給を実現します。</p>
+      </details>
+      <details class="faq-item">
+        <summary>隊員の体力維持に配慮した栄養設計はできますか？</summary>
+        <p>はい、対応しています。管理栄養士監修のもと、体力維持に最適化したカロリー設計・タンパク質・ビタミン重視の献立・訓練強度に応じた食事量調整を行います。</p>
+      </details>
+      <details class="faq-item">
+        <summary>衛生管理・食中毒対策はどうなっていますか？</summary>
+        <p>HACCP準拠の衛生管理を徹底しています。検食・保存食の管理・定期的な衛生検査・記録により、食中毒リスクをゼロに近づけます。</p>
+      </details>
+      <details class="faq-item">
+        <summary>訓練・演習など変則スケジュールにも対応できますか？</summary>
+        <p>はい、対応しています。早朝・深夜対応・変則スケジュールへの柔軟対応・食数の急な増減への対応など、緊急時の供給体制を確保しています。</p>
+      </details>
     </div>
   </div>
 </section>

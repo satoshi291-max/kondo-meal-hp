@@ -97,6 +97,13 @@
       .compare-table td, .compare-table th { padding: 10px 12px; }
       .point-cards { grid-template-columns: 1fr; }
     }
+    .faq-section { background: var(--white); }
+    .faq-item { border-bottom: 1px solid var(--gold-light); }
+    .faq-item summary { padding: 20px 0; cursor: pointer; font-size: 16px; color: var(--brown-dark); list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: "+"; color: var(--gold); font-size: 24px; font-weight: 300; flex-shrink: 0; }
+    .faq-item[open] summary::after { content: "–"; }
+    .faq-item p { padding: 0 0 20px; font-size: 15px; color: #555; line-height: 1.9; }
   </style>
 </head>
 <body>
@@ -227,6 +234,61 @@
         <h3>現場のオペレーションを簡素化</h3>
         <p>ホテル・施設のスタッフは「温めて盛り付ける」だけ。調理の専門知識がなくても安定した品質の食事を提供できるため、人材確保の悩みを解消します。</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "クックチルシステムとは何ですか？",
+      "acceptedAnswer": {"@type": "Answer", "text": "クックチルとは、加熱調理した食品を90分以内に3℃以下まで急速冷却し、衛生的に保管・配送する食品製造技術です。KMSではこの技術により、少ない調理スタッフでも大量の食事を安定した品質で提供することができます。"}
+    },
+    {
+      "@type": "Question",
+      "name": "クックチルは衛生面で安全ですか？",
+      "acceptedAnswer": {"@type": "Answer", "text": "はい、安全です。HACCP基準に基づいた温度管理・衛生管理を徹底しています。90分以内の急速冷却により細菌の増殖を抑制し、食中毒リスクを大幅に低減します。"}
+    },
+    {
+      "@type": "Question",
+      "name": "クックチルで人手不足は解消できますか？",
+      "acceptedAnswer": {"@type": "Answer", "text": "はい、大きく改善できます。セントラルキッチンで一括調理・冷却・配送するため、現地の調理スタッフを最小限に抑えられます。ホテル・介護施設・学校など、現地スタッフ不足の現場での実績があります。"}
+    },
+    {
+      "@type": "Question",
+      "name": "クックチルでコスト削減はできますか？",
+      "acceptedAnswer": {"@type": "Answer", "text": "はい、可能です。大量調理のスケールメリット・食材廃棄ロスの低減・人件費の最適化により、品質を落とさずコストを削減できます。詳しくはお気軽にご相談ください（TEL: 0895-49-5085）。"}
+    }
+  ]
+}
+</script>
+<section class="faq-section">
+  <div class="container">
+    <p class="section-label">FAQ</p>
+    <h2>よくあるご質問</h2>
+    <p class="lead">クックチルシステムについてよくいただくご質問をまとめました。</p>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>クックチルシステムとは何ですか？</summary>
+        <p>加熱調理した食品を90分以内に3℃以下まで急速冷却し、衛生的に保管・配送する技術です。少ない調理スタッフでも大量の食事を安定した品質で提供できます。</p>
+      </details>
+      <details class="faq-item">
+        <summary>クックチルは衛生面で安全ですか？</summary>
+        <p>はい、安全です。HACCP基準に基づいた温度管理を徹底しています。90分以内の急速冷却により細菌の増殖を抑制し、食中毒リスクを大幅に低減します。</p>
+      </details>
+      <details class="faq-item">
+        <summary>クックチルで人手不足は解消できますか？</summary>
+        <p>はい、大きく改善できます。セントラルキッチンで一括調理・冷却・配送するため、現地の調理スタッフを最小限に抑えられます。ホテル・介護施設・学校など幅広い現場での実績があります。</p>
+      </details>
+      <details class="faq-item">
+        <summary>クックチルでコスト削減はできますか？</summary>
+        <p>はい、可能です。大量調理のスケールメリット・食材廃棄ロスの低減・人件費の最適化により、品質を落とさずコストを削減できます。</p>
+      </details>
     </div>
   </div>
 </section>
