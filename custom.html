@@ -16,6 +16,19 @@
       gap: 32px;
       margin-top: 48px;
     }
+    .custom-card--featured { grid-column: 1 / -1; background: var(--brown-dark); border-color: var(--gold); }
+    .custom-card--featured .card-header h3 { color: var(--gold); font-size: 22px; }
+    .custom-card--featured .card-body { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    .custom-card--featured .card-body p { color: var(--gold-light); }
+    .custom-card--featured .card-body ul li { color: var(--gold-light); border-color: rgba(201,168,76,0.2); }
+    .custom-card--featured .region-examples { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .custom-card--featured .region-item { text-align: center; padding: 16px; border: 1px solid rgba(201,168,76,0.3); }
+    .custom-card--featured .region-item .region-name { font-size: 11px; letter-spacing: 2px; color: var(--gold-light); margin-bottom: 6px; }
+    .custom-card--featured .region-item .dish-name { font-size: 20px; color: var(--gold); font-family: Georgia, serif; }
+    @media (max-width: 768px) {
+      .custom-card--featured .card-body { grid-template-columns: 1fr; }
+      .custom-card--featured .region-examples { grid-template-columns: 1fr; }
+    }
     .custom-card {
       background: var(--white);
       border: 1px solid var(--gold-light);
@@ -151,20 +164,54 @@
     <p class="lead">お客様からのご要望をもとに、事前打ち合わせで対応内容を確定します。<br>ホテルならではの多様なゲストニーズに柔軟にお応えします。</p>
     <div class="custom-grid">
 
+      <!-- オーダーメニュー：全幅フィーチャードカード -->
+      <div class="custom-card custom-card--featured">
+        <div class="card-header">
+          <span class="icon">🍽️</span>
+          <h3>地域の食文化に合わせたオーダーメニュー</h3>
+        </div>
+        <div class="card-body">
+          <div>
+            <p>ホテルのコンセプトや立地に合わせて、その土地ならではの料理をご提案します。全国展開のホテルチェーンでも、各地域の食文化を食卓で表現できます。地元を知るKMSだからこそできる対応です。</p>
+            <ul>
+              <li>郷土料理・地域食材を活かしたメニュー設計</li>
+              <li>宴会・朝食ビュッフェへの組み込み提案</li>
+              <li>ホテルのコンセプト・客層に合わせたカスタマイズ</li>
+              <li>季節ごとのメニュー刷新提案</li>
+            </ul>
+          </div>
+          <div>
+            <p style="font-size:13px; margin-bottom:16px;">対応エリアの郷土料理 例</p>
+            <div class="region-examples">
+              <div class="region-item">
+                <div class="region-name">EHIME</div>
+                <div class="dish-name">鯛めし</div>
+              </div>
+              <div class="region-item">
+                <div class="region-name">KAGAWA</div>
+                <div class="dish-name">骨付き鳥</div>
+              </div>
+              <div class="region-item">
+                <div class="region-name">OITA</div>
+                <div class="dish-name">だんご汁</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="custom-card">
         <div class="card-header">
           <span class="icon">🕌</span>
           <h3>ハラール・宗教食対応</h3>
         </div>
         <div class="card-body">
-          <p>訪日ムスリムゲストへの対応ニーズが急増しています。KMSは豚肉・アルコールを使わない代替メニューを事前打ち合わせのうえ準備します（要相談）。</p>
+          <p>訪日ムスリムゲストへの対応ニーズにも応じます。豚肉・アルコールを使わないメニューを事前打ち合わせのうえ準備します（要相談）。</p>
           <ul>
             <li>豚肉・アルコール不使用メニュー</li>
-            <li>ハラール対応食材の選定</li>
             <li>メニュー表への食材表記対応</li>
-            <li>完全ハラール認証は要相談</li>
           </ul>
-          <p style="font-size:12px; color:#999; margin-top:12px; font-family:sans-serif;">※ ヴィーガン・完全菜食対応は承っておりません。</p>
+          <p style="font-size:12px; color:#999; margin-top:12px; font-family:sans-serif;">※ 完全ハラール認証・ヴィーガン対応は承っておりません。</p>
         </div>
       </div>
 
