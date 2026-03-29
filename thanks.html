@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>送信完了 | 近藤ミールサービス</title>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E650L9RPHG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-E650L9RPHG');
+    // コンバージョンイベント送信
+    gtag('event', 'form_submit', {
+      'event_category': 'contact',
+      'event_label': 'inquiry_form'
+    });
+  </script>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .thanks-section { min-height: 60vh; display: flex; align-items: center; justify-content: center; background: var(--white); }
+    .thanks-box { text-align: center; max-width: 560px; padding: 64px 32px; }
+    .thanks-icon { font-size: 56px; margin-bottom: 24px; }
+    .thanks-box h2 { font-size: 28px; color: var(--brown); margin-bottom: 16px; }
+    .thanks-box p { font-size: 15px; color: #666; line-height: 1.9; margin-bottom: 12px; }
+    .thanks-box .note { font-size: 13px; color: #999; margin-top: 8px; }
+    .thanks-box .back-btn { display: inline-block; margin-top: 40px; padding: 14px 40px; background: var(--gold); color: var(--brown-dark); font-weight: bold; font-size: 15px; letter-spacing: 1px; text-decoration: none; }
+    .thanks-box .back-btn:hover { background: #e8c460; }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">KMS <span>近藤ミールサービス</span></a>
+  <nav>
+    <div class="nav-dropdown">
+      <a href="#" class="nav-dropdown-toggle">業種から探す</a>
+      <div class="dropdown-menu">
+        <a href="hotel.html">ホテル・旅館</a>
+        <a href="elderly.html">高齢者施設</a>
+        <a href="school.html">学校・教育機関</a>
+        <a href="jieitai.html">自衛隊</a>
+      </div>
+    </div>
+    <a href="cookchil.html">クックチルシステム</a>
+    <a href="custom.html">個別対応</a>
+    <a href="company.html">会社情報</a>
+    <a href="contact.html">お問い合わせ</a>
+  </nav>
+  <div class="hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="hotel.html">ホテル・旅館</a>
+  <a href="elderly.html">高齢者施設</a>
+  <a href="school.html">学校・教育機関</a>
+  <a href="jieitai.html">自衛隊</a>
+  <a href="cookchil.html">クックチルシステム</a>
+  <a href="custom.html">個別対応</a>
+  <a href="company.html">会社情報</a>
+  <a href="contact.html">お問い合わせ</a>
+</div>
+
+<div class="thanks-section">
+  <div class="thanks-box">
+    <div class="thanks-icon">✉️</div>
+    <h2>お問い合わせありがとうございます</h2>
+    <p>内容を確認の上、通常2営業日以内にご連絡いたします。</p>
+    <p>お急ぎの場合は、お電話にてお問い合わせください。</p>
+    <p><strong style="color: var(--brown-dark); font-size: 20px; font-family: Georgia;">0895-49-5085</strong><br>
+    <span class="note">受付時間：平日 9:00〜17:00</span></p>
+    <a href="index.html" class="back-btn">トップページへ戻る</a>
+  </div>
+</div>
+
+<footer>
+  <div><strong style="color: var(--gold);">有限会社　近藤会館</strong><br>〒798-3301 愛媛県宇和島市津島町岩松1269-1</div>
+  <div>
+    <a href="index.html">ホーム</a>
+    <a href="company.html">会社情報</a>
+    <a href="contact.html">お問い合わせ</a>
+    <a href="privacy.html">プライバシーポリシー</a>
+  </div>
+  <div style="color: #5a4a3a;">© 2024 Kondo Meal Service. All rights reserved.</div>
+</footer>
+
+</body>
+</html>
