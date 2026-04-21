@@ -74,6 +74,6 @@ images/
 - 詳細: `/home/pompo/.claude/projects/-home-pompo/memory/project_hotel_food_needs.md`
 
 ## 残作業
-- 松山・丸亀拠点の住所詳細（父から確認待ち）
 - WordPressログイン情報（父から未受領）
 - お問い合わせフォームの動作確認
+- company.html 沿革2004年「空気業」の正しい表記確認（タイポ疑い）
