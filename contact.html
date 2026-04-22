@@ -198,10 +198,13 @@
         <form action="https://api.web3forms.com/submit" method="POST">
           <input type="hidden" name="access_key" value="4d7eff66-fc5e-4182-b2b1-ca4ffccda1c1">
           <input type="hidden" name="redirect" value="thanks.html">
+          <input type="hidden" name="subject" value="【KMS HPお問い合わせ】新規受信">
+          <input type="hidden" name="from_name" value="近藤ミールサービス お問い合わせフォーム">
+          <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
         <div class="form-row">
           <div class="form-group">
             <label>会社名・施設名 <span class="required">必須</span></label>
-            <input type="text" name="company" placeholder="例：〇〇ホテル">
+            <input type="text" name="company" placeholder="例：〇〇ホテル" required>
           </div>
           <div class="form-group">
             <label>部署名 <span class="optional">任意</span></label>
@@ -212,22 +215,22 @@
         <div class="form-row">
           <div class="form-group">
             <label>お名前 <span class="required">必須</span></label>
-            <input type="text" name="name" placeholder="例：近藤 幸雄">
+            <input type="text" name="name" placeholder="例：近藤 幸雄" required>
           </div>
           <div class="form-group">
             <label>電話番号 <span class="required">必須</span></label>
-            <input type="tel" name="phone" placeholder="例：0895-49-5085">
+            <input type="tel" name="phone" placeholder="例：0895-49-5085" required>
           </div>
         </div>
 
         <div class="form-group">
           <label>メールアドレス <span class="required">必須</span></label>
-          <input type="email" name="email" placeholder="例：info@example.com">
+          <input type="email" name="email" placeholder="例：info@example.com" required>
         </div>
 
         <div class="form-group">
           <label>お問い合わせ種別 <span class="required">必須</span></label>
-          <select name="inquiry_type">
+          <select name="inquiry_type" required>
             <option value="">選択してください</option>
             <option>ホテル・旅館向けサービスについて</option>
             <option>高齢者・介護施設向けサービスについて</option>
@@ -255,11 +258,11 @@
 
         <div class="form-group">
           <label>お問い合わせ内容 <span class="required">必須</span></label>
-          <textarea name="message" placeholder="ご要望・ご質問をご記入ください。&#10;例：ホテルの朝食ビュッフェを外部委託したい。現在50名規模で運営しており、コスト削減と人手不足解消が課題です。"></textarea>
+          <textarea name="message" placeholder="ご要望・ご質問をご記入ください。&#10;例：ホテルの朝食ビュッフェを外部委託したい。現在50名規模で運営しており、コスト削減と人手不足解消が課題です。" required></textarea>
         </div>
 
         <div class="privacy-check">
-          <input type="checkbox" id="privacy">
+          <input type="checkbox" id="privacy" name="privacy_agreed" value="yes" required>
           <label for="privacy">
             <a href="privacy.html">プライバシーポリシー</a>に同意する
           </label>
