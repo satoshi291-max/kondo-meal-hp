@@ -74,5 +74,4 @@ images/
 - 詳細: `/home/pompo/.claude/projects/-home-pompo/memory/project_hotel_food_needs.md`
 
 ## 残作業
-- WordPressログイン情報（父から未受領）
 - お問い合わせフォームの動作確認
